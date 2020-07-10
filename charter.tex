@@ -1,7 +1,7 @@
 \documentclass[11pt]{charter}
 
 % El títulos de la memoria, se usa en la carátula y se puede usar el cualquier lugar del documento con el comando \ttitle
-\titulo{Título del proyecto} 
+\titulo{Detector de descargas parciales} 
 
 % Nombre del posgrado, se usa en la carátula y se puede usar el cualquier lugar del documento con el comando \degreename
 \posgrado{Carrera de Especialización en Sistemas Embebidos} 
@@ -11,14 +11,14 @@
 %\posgrado{Maestría en Internet de las cosas}
 
 % Tu nombre, se puede usar el cualquier lugar del documento con el comando \authorname
-\autor{Nombre del Autor} 
+\autor{Pablo Severini} 
 
 % El nombre del director y co-director, se puede usar el cualquier lugar del documento con el comando \supname y \cosupname y \pertesupname y \pertecosupname
-\director{Nombre del Director}
-\pertenenciaDirector{pertenencia} 
+\director{Marcos Maillot}
+\pertenenciaDirector{UTN FRP} 
 % FIXME:NO IMPLEMENTADO EL CODIRECTOR ni su pertenencia
-\codirector{} % si queda vacio no se deberíá incluir 
-\pertenenciaCoDirector{}
+\codirector{Cristian Bonini} % si queda vacio no se deberíá incluir 
+\pertenenciaCoDirector{UTN FRP}
 
 % Nombre del cliente, quien va a aprobar los resultados del proyecto, se puede usar con el comando \clientename y \empclientename
 \cliente{Nombre del cliente}
@@ -63,12 +63,8 @@
 \hline
 \rowcolor[HTML]{C0C0C0} 
 Revisión & \multicolumn{1}{c|}{\cellcolor[HTML]{C0C0C0}Detalles de los cambios realizados} & Fecha      \\ \hline
-1.0      & Creación del documento                                                          & 22/06/2020 \\ \hline
-1.1      & Ejemplo de un texto muy largo que debiera ocupar más de una línea para que tengan de ejemplo                                                                                																						   & dd/mm/aaaa \\ \hline
-1.2      & Otro ejemplo \newline
-		   Con texto partido \newline
-		   En varias líneas \newline
-		   A propósito                                                                     & dd/mm/aaaa \\ \hline
+1.0      & 	Creación del documento     				& 22/06/2020 \\ \hline
+1.1      & 	Se agrego del punto 1 al 6	 			& 05/07/2020 \\ \hline
 \end{tabularx}
 \end{table}
 
@@ -83,9 +79,9 @@ Revisión & \multicolumn{1}{c|}{\cellcolor[HTML]{C0C0C0}Detalles de los cambios 
 Buenos Aires, \fechaInicioName
 \end{flushright}
 
-\vspace{2cm}
+\vspace{2 cm}
 
-Por medio de la presente se acuerda con el Ing. \authorname\hspace{1px} que su Trabajo Final de la \degreename\hspace{1px} se titulará ``\ttitle'', consistirá esencialmente en el prototipo preliminar de un\textcolor{red}{... completar con una descripción de una o dos líneas}, y tendrá un presupuesto preliminar estimado de 600 hs de trabajo y \textcolor{red}{\$XXX}, con fecha de inicio \fechaInicioName\hspace{1px} y fecha de presentación pública \fechaFinalName.
+Por medio de la presente se acuerda con el Ing. \authorname\hspace{1px} que su Trabajo Final de la \degreename\hspace{1px} se titulará ``\ttitle'', consistirá esencialmente en un generador de patrones de descargas parciales, y tendrá un presupuesto preliminar estimado de 600 hs de trabajo, con fecha de inicio \fechaInicioName\hspace{1px} y fecha de presentación pública \fechaFinalName.
 
 Se adjunta a esta acta la planificación inicial.
 
@@ -96,7 +92,8 @@ Se adjunta a esta acta la planificación inicial.
 \centering
 \begin{tabular}{ccc}
 \begin{tabular}[c]{@{}c@{}}Ariel Lutenberg \\ Director posgrado FIUBA\end{tabular} &  & \begin{tabular}[c]{@{}c@{}}\clientename \\ \empclientename \end{tabular} \vspace{2.5cm} \\ 
-\multicolumn{3}{c}{\begin{tabular}[c]{@{}c@{}} \supname \\ Director del Trabajo Final\end{tabular}} \vspace{2.5cm} \\
+\begin{tabular}[c]{@{}c@{}}\supname \\ Director del Trabajo Final\end{tabular} &  & 
+\begin{tabular}[c]{@{}c@{}}\cosupname \\ Co-Director del Trabajo Final \end{tabular} \vspace{2.5cm} \\ 
 \begin{tabular}[c]{@{}c@{}}\jurunoname \\ Jurado del Trabajo Final\end{tabular}     &  & \begin{tabular}[c]{@{}c@{}}\jurdosname\\ Jurado del Trabajo Final\end{tabular}  \vspace{2.5cm}  \\
 \multicolumn{3}{c}{\begin{tabular}[c]{@{}c@{}} \jurtresname\\ Jurado del Trabajo Final\end{tabular}} \vspace{.5cm}                                                                     
 \end{tabular}
@@ -108,54 +105,55 @@ Se adjunta a esta acta la planificación inicial.
 \section{Descripción técnica-conceptual del Proyecto a realizar}
 \label{sec:descripcion}
 
-\begin{consigna}{red}
-El objetivo es que el lector en una o dos páginas entienda de qué se trata el proyecto y cuáles son sus desafíos, su motivación y su importancia.
-Se debe destacar claramente cuál es el valor que agrega el proyecto a realizar. ``El presente proyecto se destaca especialmente por incorporar tal cosa... Esto lo diferencia de otros sistemas similares en que ...''
+Introducción general al tema
 
-Puede ser útil incluir en esta sección la respuesta a alguna de estas preguntas:
-
-\begin{itemize}
-\item ¿Cómo se vincula este proyecto con la misión de la organización?
-\item ¿Cómo se inserta este proyecto en el modelo de negocio de la organización?
-\item ¿Ayuda a la explicación si se incluye un lienzo Canvas del Modelo de Negocio?
-\item ¿En qué estado del ciclo de vida está el producto que se desea reemplazar o mejorar?
-\item ¿Cuales son las necesidades que debe satisfacer?
-\item ¿Por dónde pasa la innovación?
-\end{itemize}
-
-La descripción técnica-conceptual \textbf{debe incluir al menos un diagrama en bloques del sistema }y una frase como la siguiente: ``En la Figura \ref{fig:diagBloques} se presenta el diagrama en bloques del sistema. Se observa que...''. Luego recién más abajo de haber puesto esta frase se pone la figura. La regla es que las figuras nunca pueden ir antes de ser mencionadas en el texto, porque sino el lector no entiende por qué de pronto aparece una figura.
-
-\vspace{25px}
+Una descarga parcial es un fenómeno de disrupción eléctrica. Se caracteriza por ser un
+pulso de corriente de alta frecuencia el cual se produce en el seno de un sistema aislante de
+una máquina o equipo eléctrico de potencia como consecuencia de la presencia de
+oclusiones gaseosas, impurezas, aristas aguzadas u otras anomalías que distorsionan la
+distribución de las líneas de campo eléctrico.
+La ocurrencia de este fenómeno provoca un deterioro local o total del sistema aislante;
+dependiendo de la tecnología de aislación utilizada. Indistintamente de cuál sea el medio en
+el que este fenómeno se manifiesta y cual sea la causa que lo origina, el deterioro del
+sistema es acumulativo.
+El detector de descargas parciales es un equipo que permite realizar mediciones de
+distintos tipos de DP en máquinas o equipos eléctricos de potencia. Por medio de estas
+mediciones es posible monitorear el estado de su aislación.
+En la figura 1 se presenta el diagrama en bloques del sistema.
 
 \begin{figure}[htpb]
 \centering 
-\includegraphics[width=.7\textwidth]{./Figuras/diagBloques.png}
+\includegraphics[width=.7\textwidth]{./Figuras/diagBloques1.png}
 \caption{Diagrama en bloques del sistema}
 \label{fig:diagBloques}
 \end{figure}
 
-\vspace{25px}
+Descripción detallada
 
-El tamaño de la tipografía en la figura debe ser adecuado para que NO pase lo que ocurre acá, donde el lector debe esforzarse para poder leer el texto. Los colores usados en el diagrama deben ser adecuados, tal que ayuden a comprender mejor el diagrama.
-\end{consigna}
+El objetivo del presente trabajo es desarrollar un hardware capaz de detectar los picos
+máximos de los pulsos de DP y representarlos sobre una senoide de referencia de
+frecuencia industrial - 50 Hertz – en fase con la tensión de ensayo. La superposición de
+eventos conformará una nube cuya estructura o morfología dará indicios del tipo de DP
+(corona, interna o superficial).
+A la representación antes mencionada se la conoce con el nombre de “Patrón de DP”. Una
+imagen de este puede apreciarse en la figura número 2.
+
+\begin{figure}[htpb]
+\centering 
+\includegraphics[width=.3\textwidth]{./Figuras/patronDP.png}
+\caption{Diagrama en bloques del sistema}
+\label{fig:diagBloques}
+\end{figure}
+
+Situación actual
+
+Actualmente existen equipos de medición de descargas parciales fabricados por empresas extranjeras como TechImp. No obstante, debido a su diseño, los equipos existentes en el mercado son equipos de alto costo no aptos para trabajar como equipos estacionarios.
+
+Mediante este proyecto se pretende crear un equipo de bajo costo capaz de ser instalado permanentemente para monitoreo en tiempo real.
 
 
 \section{Identificación y análisis de los interesados}
 \label{sec:interesados}
-
-\begin{consigna}{red} 
-Nota: (borrar esto y todas las consignas en color rojo antes de entregar este documento).
- 
-Es inusual que una misma persona esté en más de un rol, incluso en proyectos chicos.
- 
-Si se considera que una persona cumple dos o más roles, entonces sólo dejarla en el rol más importante. Por ejemplo:
-
-\begin{itemize}
-\item Si una persona es Cliente pero también colabora u orienta, dejarla solo como Cliente.
-\item Si una persona es el Responsable, no debe ser colocado también como Miembro del equipo.
-\end{itemize}
-
-Pero en cambio sí es usual que el Cliente y el Auspiciante sean el mismo, por ejemplo.
 
 \begin{table}[ht]
 %\caption{Identificación de los interesados}
@@ -164,163 +162,161 @@ Pero en cambio sí es usual que el Cliente y el Auspiciante sean el mismo, por e
 \hline
 \rowcolor[HTML]{C0C0C0} 
 Rol           & Nombre y Apellido & Organización 	& Puesto 	\\ \hline
-Auspiciante   &                   &              	&        	\\ \hline
 Cliente       & \clientename      &\empclientename	&        	\\ \hline
-Impulsor      &                   &              	&        	\\ \hline
+Impulsor      & \authorname       & FIUBA         	& Alumno   	\\ \hline
 Responsable   & \authorname       & FIUBA        	& Alumno 	\\ \hline
-Colaboradores &                   &              	&        	\\ \hline
-Orientador    & \supname	      & \pertesupname 	& Director	Trabajo final \\ \hline
-Equipo        & miembro1 \newline 
-				miembro2          &              	&        	\\ \hline
-Opositores    &                   &              	&        	\\ \hline
-Usuario final &                   &              	&        	\\ \hline
+Orientador    & \supname 		  & \pertesupname 	& Director	Trabajo final \\ \hline
+Orientador    & \cosupname 		  & \pertesupname 	& Co-Director	Trabajo final \\ \hline
 \end{tabularx}
 \end{table}
-
-El Director suele ser uno de los Orientadores.
-
-No dejar celdas vacías; si no hay nada que poner en una celda colocar un signo ``-''.
-
-No dejar filas vacías; si no hay nada que poner en una fila entonces eliminarla.
-
-Sería deseable listar a continuación de la tabla las principales características de cada interesado.
- 
-Por ejemplo:
-\begin{itemize}
-\item Auspiciante: es riguroso y exigente con la rendición de gastos. Tener mucho cuidado con esto.
-\item Equipo: Juan Perez, suele pedir licencia porque tiene un familiar con una enfermedad. Planificar considerando esto.
-\item Orientador: María Gómez, nos va a poder ayudar mucho con la gestión de impuestos.
-\end{itemize}
-
-\end{consigna}
-
 
 
 \section{1. Propósito del proyecto}
 \label{sec:proposito}
 
-\begin{consigna}{red}
-¿Por qué se hace el proyecto? ¿Qué se quiere lograr? 
-
-Se recomienda que sea solo un párrafo que empiece diciendo ``El propósito de este proyecto es...''.
-\end{consigna}
+El propósito de este proyecto es crear un equipo de medición de descargas parciales de bajo costo capaz de ser instalado permanentemente, para brindar un monitoreo constante, rápido y eficiente.
 
 \section{2. Alcance del proyecto}
 \label{sec:alcance}
 
-\begin{consigna}{red}
-¿Qué se incluye y que no se incluye en este proyecto?
+El presente proyecto incluye:
+\begin{itemize}
+\item El desarrollo del prototipo del producto.
+\item El desarrollo del firmware.
+\item El diseño electrónico del hardware.
+\item Confección de un manual de uso.
+\item Pruebas de validación y verificación.
+\end{itemize}
 
-Se refiere al trabajo a hacer para entregar el producto o resultado especificado. 
-
-Explicitar todo lo quede comprendido dentro del alcance del proyecto.
-
-Explicitar además todo lo que no quede incluido (``El presente proyecto no incluye...'')
-
-\end{consigna}
+El presente proyecto no incluye:
+\begin{itemize}
+\item El desarrollo del equipo final.
+\item Diseño de gabinete.
+\item Pruebas en campo.
+\end{itemize}
 
 
 \section{3. Supuestos del proyecto}
 \label{sec:supuestos}
 
-\begin{consigna}{red}
-``Para el desarrollo del presente proyecto se supone que: ...''
-
 \begin{itemize}
-\item Supuesto 1
-\item Supuesto 2...
+\item Las características de las señales a utilizar durante la etapa de prueba serán provistas por UTN FRP.
+\item En el ámbito del COVID 2019, no se cerraran las importaciones impidiendo el acceso a equipamiento o materiales necesarios para la ejecución del proyecto.
 \end{itemize}
-
-Por ejemplo, se podrían incluir supuestos respecto a disponibilidad de tiempo y recursos humanos y materiales, sobre la factibilidad técnica de distintos aspectos del proyecto, sobre otras cuestiones que sean necesarias para el éxito del proyecto como condiciones macroeconómicas o reglamentarias.
-\end{consigna}
 
 \section{4. Requerimientos}
 \label{sec:requerimientos}
 
-\begin{consigna}{red}
-Los requerimientos deben numerarse y de ser posible agruparlos por afinidad:
-
 \begin{enumerate}
-\item Grupo de requerimientos asociados con...
+\item Requerimientos generales
 	\begin{enumerate}
-	\item Requerimiento 1
-	\item Requerimiento 2
-	\item Requerimiento 3 (prioridad menor)
+	\item El dispositivo deberá, mediante el procesamiento de las adquisiciones, detectar los picos máximos de los pulsos de DP y representarlos sobre una senoide de referencia de frecuencia industrial - 50 Hertz - en fase con la tensión de ensayo.
+	\item El dispositivo deberá funcionar como un sistema "stand-alone".
+	\item El dispositivo debe tener capacidad de almacenar al menos 1000 descargas parciales.
+	\item El dispositivo debe tener una entrada para la señal analógica y una entrada para la señal de referencia.	
 	\end{enumerate}
-\item Grupo de requerimientos asociados con...
+\item Requerimientos asociados a la adquisición de la señal analógica
 	\begin{enumerate}
-	\item Requerimiento 1
-	\item Requerimiento 2 (prioridad menor)
+	\item Se deben poder adquirir señales de al menos 45Mhz con una resolución mínima de 8 bits
+	\item El trigger de disparo debe ser configurable.
+	\item La duración del pulso medido sera como máximo 1 mili segundo.
+	\item La amplitud máxima de la señal de entrada sera de 1Vpp.
+	\item La entrada para el sensor analógico deberá ser de 50 ohms diferencial.
+	\end{enumerate}
+\item Requerimientos asociados a la adquisición de la señal de referencia
+	\begin{enumerate}
+	\item La entrada de señal de referencia debe poder detectar los cruces por cero de una senoide de 50 Hz.
+	\item La entrada de señal de referencia debe ser opto-acoplada.
+	\end{enumerate}
+\item Requerimientos asociados a la interfaz de usuario
+	\begin{enumerate}
+	\item Deberá contar con un acceso a un puerto SD o USB para la descarga de datos. 
+	\item Deberá contar con un display y teclado para configuración de parámetros básicos.
+	\item Deberá poder graficar el patrón de descargas parciales actual en el display.
+	\item Deberá tener un puerto de acceso serial (preferentemente diferencial) para configuración y acceso a datos remoto.
+	
 	\end{enumerate}
 \end{enumerate}
-
-Leyendo los requerimientos se debe poder interpretar cómo será el proyecto y su funcionalidad.
-
-De ser posible indicar cómo se obtuvieron cada uno de los requerimientos 
-
-Indicar claramente cuál es la prioridad entre los distintos requerimientos. 
-
-No olvidarse de que los requerimientos incluyen a las regulaciones y normas vigentes!!!
-
-Y al escribirlos seguir las siguientes reglas:
-\begin{itemize}
-\item Ser breve y conciso (nadie lee cosas largas). 
-\item Ser específico: no dejar lugar a confusiones.
-\item Expresar los requerimientos en términos que sean cuantificables y medibles.
-\end{itemize}
-
-\end{consigna}
 
 \section{5. Entregables principales del proyecto}
 \label{sec:entregables}
 
-\begin{consigna}{red}
-Cosas como: 
 \begin{itemize}
 \item Manual de uso
 \item Diagrama esquemático
-\item Código fuente
 \item Diagrama de instalación
 \item Informe final
 
 \end{itemize}
 
-\end{consigna}
-
 \section{6. Desglose del trabajo en tareas}
 \label{sec:wbs}
 
-\begin{consigna}{red}
-Se recomienda mostrar el WBS mediante una lista indexada:
-
 \begin{enumerate}
-\item Grupo de tareas 1
+\item Planificación
 	\begin{enumerate}
-	\item Tarea 1 (tantas hs)
-	\item Tarea 2 (tantas hs)
-	\item Tarea 3 (tantas hs)
+	\item Realizar el plan de proyecto (16hs)
 	\end{enumerate}
-\item Grupo de tareas 2
+\item Recopilación de información
 	\begin{enumerate}
-	\item Tarea 1 (tantas hs)
-	\item Tarea 2 (tantas hs)
-	\item Tarea 3 (tantas hs)
+	\item Búsqueda de información teórica de muestreo a alta velocidad (12hs)
+	\item Búsqueda de componentes para la etapa de adquisición analógica (12hs)
+	\item Búsqueda de información de puertos de comunicación de alta velocidad (4hs)
 	\end{enumerate}
-	\item Grupo de tareas 3
+\item Análisis de periféricos de comunicación
 	\begin{enumerate}
-	\item Tarea 1 (tantas hs)
-	\item Tarea 2 (tantas hs)
-	\item Tarea 3 (tantas hs)
-	\item Tarea 4 (tantas hs)
-	\item Tarea 5 (tantas hs)
+	\item Codificar funciones para testear limitaciones en la comunicación con el ADC. (20hs)
+	\item Codificar funciones para simular la salida digital del ADC a alta velocidad. (20hs)
+	\item Codificar funciones para el trigger de disparo. (24hs)
+	\end{enumerate}
+\item Diseño de hardware
+	\begin{enumerate}
+	\item Selección y calculo de filtros. (8hs)
+	\item Selección de componentes. (20hs)
+	\item Diseño del esquemático para la etapa de adquisición analógica. (20hs)
+	\item Diseño del PCB para la etapa de adquisición analógica. (12hs)
+	\item Montaje de componentes. (8hs)
+	\item Verificación y puesta en marcha del hardware. (20hs)
+	\item Validación de señales analógicas. (8hs)
+	\end{enumerate}
+\item Desarrollo modulo de adquisición
+	\begin{enumerate}
+	\item Codificar funciones de comunicación con ADC. (40hs)
+	\item Codificar funciones de detección de cruce por cero. (8hs)
+	\item Codificar funciones de integración entre la senoide de referencia y la descarga parcial. (24hs)
+	\item Integrar funciones de trigger. (12hs)
+	\item Testeo de integridad por medio de inyección de señales simuladas. (24hs)
+	\end{enumerate}
+\item Desarrollo modulo de comunicación por linea de comandos
+	\begin{enumerate}
+	\item Codificar funciones de comunicación para la UART. (16hs)
+	\end{enumerate}
+\item Desarrollo modulo interfaz de usuario
+	\begin{enumerate}
+	\item Codificar funciones de comunicación con display. (24hs)
+	\item Codificar funciones del teclado de entrada. (4hs)
+	\item Codificar menú de configuración. (20hs)
+	\end{enumerate}
+\item Desarrollo modulo de almacenamiento
+	\begin{enumerate}
+	\item Codificar funciones de almacenamiento USB. (40hs)
+	\end{enumerate}
+\item Integración
+	\begin{enumerate}
+	\item Integrar todos los módulos de software. (40hs) 	
+	\item Testeo funcional.	(30hs)
+	\item Diseño del esquemático final.	(24hs)
+	\end{enumerate}
+\item Proceso final
+	\begin{enumerate}
+	\item Confeccionar manual de uso. (10hs) 	
+	\item Confeccionar memoria (50hs??)
+	\item Revisión final del documento (24hs??)
 	\end{enumerate}
 \end{enumerate}
 
-Cantidad total de horas: (tantas hs)
+Cantidad total de horas: (600 hs)
 
-Se recomienda que no haya ninguna tarea que lleve más de 40 hs. 
-
-\end{consigna}
 
 \section{7. Diagrama de Activity On Node}
 \label{sec:AoN}
