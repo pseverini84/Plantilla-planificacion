@@ -1,7 +1,7 @@
 \documentclass[11pt]{charter}
 
 % El títulos de la memoria, se usa en la carátula y se puede usar el cualquier lugar del documento con el comando \ttitle
-\titulo{Detector de descargas parciales} 
+\titulo{Equipo adquisidor de descargas parciales} 
 
 % Nombre del posgrado, se usa en la carátula y se puede usar el cualquier lugar del documento con el comando \degreename
 \posgrado{Carrera de Especialización en Sistemas Embebidos} 
@@ -14,15 +14,15 @@
 \autor{Pablo Severini} 
 
 % El nombre del director y co-director, se puede usar el cualquier lugar del documento con el comando \supname y \cosupname y \pertesupname y \pertecosupname
-\director{Marcos Maillot}
-\pertenenciaDirector{UTN FRP} 
+\director{Dr. Ing. Marcos Maillot}
+\pertenenciaDirector{UTN FRGP} 
 % FIXME:NO IMPLEMENTADO EL CODIRECTOR ni su pertenencia
-\codirector{Cristian Bonini} % si queda vacio no se deberíá incluir 
-\pertenenciaCoDirector{UTN FRP}
+\codirector{Ing. Cristian Bonini} % si queda vacio no se deberíá incluir 
+\pertenenciaCoDirector{UTN FRGP}
 
 % Nombre del cliente, quien va a aprobar los resultados del proyecto, se puede usar con el comando \clientename y \empclientename
-\cliente{Nombre del cliente}
-\empresaCliente{Empresa del cliente}
+\cliente{Marcos Maillot}
+\empresaCliente{UTN FRGP}
 
 % Nombre y pertenencia de los jurados, se pueden usar el cualquier lugar del documento con el comando \jurunoname, \jurdosname y \jurtresname y \perteunoname, \pertedosname y \pertetresname.
 \juradoUno{Nombre y Apellido (1)}
@@ -34,7 +34,7 @@
  
 \fechaINICIO{22 de junio de 2020}		%Fecha de inicio de la cursada de GdP \fechaInicioName
 \fechaFINALPlanificacion{22 de Agosto de 2020} 	%Fecha de final de cursada de GdP
-\fechaFINALTrabajo{22 de diciembre de 2020}		%Fecha de defensa pública del trabajo final
+\fechaFINALTrabajo{22 de Agosto de 2021}		%Fecha de defensa pública del trabajo final
 
 
 \begin{document}
@@ -63,8 +63,10 @@
 \hline
 \rowcolor[HTML]{C0C0C0} 
 Revisión & \multicolumn{1}{c|}{\cellcolor[HTML]{C0C0C0}Detalles de los cambios realizados} & Fecha      \\ \hline
-1.0      & 	Creación del documento     				& 22/06/2020 \\ \hline
-1.1      & 	Se agrego del punto 1 al 6	 			& 05/07/2020 \\ \hline
+1.0      & 	Creación del documento     							& 22/06/2020 \\ \hline
+1.1      & 	Se agrega del punto 1 al 6	 						& 05/07/2020 \\ \hline
+1.2      & 	Se agregan las correcciones del punto 1 al 6		& 15/07/2020 \\ \hline
+1.3      & 	Se agrega del punto 7 al 11							& 23/07/2020 \\ \hline
 \end{tabularx}
 \end{table}
 
@@ -81,7 +83,7 @@ Buenos Aires, \fechaInicioName
 
 \vspace{2 cm}
 
-Por medio de la presente se acuerda con el Ing. \authorname\hspace{1px} que su Trabajo Final de la \degreename\hspace{1px} se titulará ``\ttitle'', consistirá esencialmente en un generador de patrones de descargas parciales, y tendrá un presupuesto preliminar estimado de 600 hs de trabajo, con fecha de inicio \fechaInicioName\hspace{1px} y fecha de presentación pública \fechaFinalName.
+Por medio de la presente se acuerda con el Ing. \authorname\hspace{1px} que su Trabajo Final de la \degreename\hspace{1px} se titulará ``\ttitle'', consistirá esencialmente en un equipo que detecte pulsos de descargas parciales traducidos por un sensor externo y mediante la referencia de la fase bajo medición construya un patrón de descargas parciales. Tendrá un presupuesto preliminar estimado de 800\euro\ y 600 hs de trabajo, con fecha de inicio \fechaInicioName\hspace{1px} y fecha de presentación pública \fechaFinalName.
 
 Se adjunta a esta acta la planificación inicial.
 
@@ -112,44 +114,44 @@ pulso de corriente de alta frecuencia el cual se produce en el seno de un sistem
 una máquina o equipo eléctrico de potencia como consecuencia de la presencia de
 oclusiones gaseosas, impurezas, aristas aguzadas u otras anomalías que distorsionan la
 distribución de las líneas de campo eléctrico.
-La ocurrencia de este fenómeno provoca un deterioro local o total del sistema aislante;
-dependiendo de la tecnología de aislación utilizada. Indistintamente de cuál sea el medio en
+
+La ocurrencia de este fenómeno provoca un deterioro local del sistema aislante. Indistintamente de cuál sea el medio en
 el que este fenómeno se manifiesta y cual sea la causa que lo origina, el deterioro del
 sistema es acumulativo.
-El detector de descargas parciales es un equipo que permite realizar mediciones de
+
+El generador de patrones de descargas parciales (en adelante DP) es un equipo que permite realizar mediciones de
 distintos tipos de DP en máquinas o equipos eléctricos de potencia. Por medio de estas
 mediciones es posible monitorear el estado de su aislación.
 En la figura 1 se presenta el diagrama en bloques del sistema.
 
 \begin{figure}[htpb]
 \centering 
-\includegraphics[width=.7\textwidth]{./Figuras/diagBloques1.png}
+\includegraphics[width=1\textwidth]{./Figuras/diagBloques1.png}
 \caption{Diagrama en bloques del sistema}
 \label{fig:diagBloques}
 \end{figure}
 
 Descripción detallada
 
-El objetivo del presente trabajo es desarrollar un hardware capaz de detectar los picos
+El objetivo del presente trabajo es desarrollar un sistema capaz de detectar los picos
 máximos de los pulsos de DP y representarlos sobre una senoide de referencia de
 frecuencia industrial - 50 Hertz – en fase con la tensión de ensayo. La superposición de
 eventos conformará una nube cuya estructura o morfología dará indicios del tipo de DP
 (corona, interna o superficial).
 A la representación antes mencionada se la conoce con el nombre de “Patrón de DP”. Una
-imagen de este puede apreciarse en la figura número 2.
+imagen de este puede apreciarse en la figura 2.
 
-\begin{figure}[htpb]
+\begin{figure}[H]
 \centering 
-\includegraphics[width=.3\textwidth]{./Figuras/patronDP.png}
-\caption{Diagrama en bloques del sistema}
+\includegraphics[width=.5\textwidth]{./Figuras/patronDP.png}
+\caption{Ejemplo de patrón de DP del tipo interna}
 \label{fig:diagBloques}
 \end{figure}
 
-Situación actual
 
-Actualmente existen equipos de medición de descargas parciales fabricados por empresas extranjeras como TechImp. No obstante, debido a su diseño, los equipos existentes en el mercado son equipos de alto costo no aptos para trabajar como equipos estacionarios.
+Estado del arte
 
-Mediante este proyecto se pretende crear un equipo de bajo costo capaz de ser instalado permanentemente para monitoreo en tiempo real.
+Actualmente existen equipos de medición de descargas parciales fabricados por empresas extranjeras como TechImp, PD Power Diagnostic, Omnicrom. El sistema propuesto se diferencia de los antes mencionados por ser un equipo de bajo costo capaz de ser instalado de forma fija para realizar monitoreo en tiempo real.
 
 
 \section{Identificación y análisis de los interesados}
@@ -162,10 +164,9 @@ Mediante este proyecto se pretende crear un equipo de bajo costo capaz de ser in
 \hline
 \rowcolor[HTML]{C0C0C0} 
 Rol           & Nombre y Apellido & Organización 	& Puesto 	\\ \hline
-Cliente       & \clientename      &\empclientename	&        	\\ \hline
+Cliente       & \clientename      &\empclientename	& Director	Trabajo final       	\\ \hline
 Impulsor      & \authorname       & FIUBA         	& Alumno   	\\ \hline
 Responsable   & \authorname       & FIUBA        	& Alumno 	\\ \hline
-Orientador    & \supname 		  & \pertesupname 	& Director	Trabajo final \\ \hline
 Orientador    & \cosupname 		  & \pertesupname 	& Co-Director	Trabajo final \\ \hline
 \end{tabularx}
 \end{table}
@@ -200,8 +201,8 @@ El presente proyecto no incluye:
 \label{sec:supuestos}
 
 \begin{itemize}
-\item Las características de las señales a utilizar durante la etapa de prueba serán provistas por UTN FRP.
-\item En el ámbito del COVID 2019, no se cerraran las importaciones impidiendo el acceso a equipamiento o materiales necesarios para la ejecución del proyecto.
+\item UTN FRGP proveerá una base de datos de señales de DP adquiridas sobre distintas probetas de distintos materiales dieléctricos en laboratorio. 
+\item En el ámbito del COVID 2019, no se cerrarán las importaciones impidiendo el acceso a equipamiento o materiales necesarios para la ejecución del proyecto.
 \end{itemize}
 
 \section{4. Requerimientos}
@@ -210,32 +211,52 @@ El presente proyecto no incluye:
 \begin{enumerate}
 \item Requerimientos generales
 	\begin{enumerate}
-	\item El dispositivo deberá, mediante el procesamiento de las adquisiciones, detectar los picos máximos de los pulsos de DP y representarlos sobre una senoide de referencia de frecuencia industrial - 50 Hertz - en fase con la tensión de ensayo.
-	\item El dispositivo deberá funcionar como un sistema "stand-alone".
-	\item El dispositivo debe tener capacidad de almacenar al menos 1000 descargas parciales.
-	\item El dispositivo debe tener una entrada para la señal analógica y una entrada para la señal de referencia.	
+	\item El dispositivo deberá, mediante el procesamiento de las adquisiciones, detectar los picos máximos de los pulsos de DP y representarlos sobre una senoide de referencia de frecuencia industrial - 50 Hertz - en fase con la tensión de ensayo (generar un patrón de DP).
+	\item El dispositivo deberá funcionar como un sistema \textit{"stand-alone"}.
+	\item El dispositivo debe mantener la fecha y hora por medio de un RTC.
+	\item El dispositivo deberá tener un puerto de acceso serial (preferentemente diferencial) para configuración y acceso a datos remoto.
+	\item El dispositivo deberá contar con un puerto USB para la descarga de los patrones de DP.
 	\end{enumerate}
-\item Requerimientos asociados a la adquisición de la señal analógica
+\item Requerimientos asociados a la configuración
 	\begin{enumerate}
-	\item Se deben poder adquirir señales de al menos 45Mhz con una resolución mínima de 8 bits
-	\item El trigger de disparo debe ser configurable.
-	\item La duración del pulso medido sera como máximo 1 mili segundo.
-	\item La amplitud máxima de la señal de entrada sera de 1Vpp.
-	\item La entrada para el sensor analógico deberá ser de 50 ohms diferencial.
+	\item El dispositivo deberá permitir modificar el umbral de disparo a partir del cual se comenzará a procesar una señal.
+	\item El dispositivo deberá permitir modificar la cantidad de muestras que serán procesadas por disparo (máximo 1000).
+	\item El dispositivo deberá permitir modificar la cantidad de disparos (máximo 1000) que componen a un patrón de DP.
+	\item El dispositivo deberá permitir configurar el RTC.
+	\item El dispositivo deberá permitir planificar la generación automática de un patrón DP cada periodos múltiplos de 1 hora (calendario).
+	\item El dispositivo deberá permitir generar un patrón de DP con los parámetros configurados a demanda y transferirlo por el puerto serie.
+	\end{enumerate}
+\item Requerimientos asociados al modo de trabajo
+	\begin{enumerate}
+	\item El dispositivo deberá permitir poner al sistema en modo “ARMADO” y “ DESARMADO”.
+	\item En modo “ARMADO” el dispositivo deberá cumplir con las adquisiciones preestablecidas por calendario.
+	\item En modo “DESARMADO” el dispositivo no estará operativo.
 	\end{enumerate}
 \item Requerimientos asociados a la adquisición de la señal de referencia
 	\begin{enumerate}
-	\item La entrada de señal de referencia debe poder detectar los cruces por cero de una senoide de 50 Hz.
+	\item La entrada de señal de referencia debe poder detectar los cruces por cero de una senoide de 50 Hz, y saber su polaridad.
 	\item La entrada de señal de referencia debe ser opto-acoplada.
+	\item El dispositivo deberá llevar un contador en milisegundos a partir de la señal de cruce por cero. De forma tal que se pueda saber en todo momento si está transcurriendo un semiciclo positivo o negativo y saber cuánto tiempo transcurrió desde su inicio.
+	\end{enumerate}
+\item Requerimientos asociados a la adquisición de la señal analógica
+	\begin{enumerate}
+	\item Se deben poder adquirir señales con una ancho de banda entre 0.1MHz y 40Mhz con una resolución mínima de 8 bits.
+	\item La amplitud máxima de la señal de entrada sera de 1 Vpp.
+	\item La entrada para el sensor analógico deberá ser de 50 ohms diferencial.
+ 	\item El dispositivo deberá detectar cuando la señal muestreada supere el umbral de disparo, si esto sucediera las siguientes muestras (cantidad definida anteriormente en la configuración) deberán ser comparadas entre sí y preservar la de mayor magnitud. El valor obtenido deberá ser almacenado en memoria, junto con un \textit{timestamp}, la polaridad del semiciclo de referencia y su momento angular. Este proceso debe ser repetido hasta que se cumplan los disparos que componen un patrón DP.
 	\end{enumerate}
 \item Requerimientos asociados a la interfaz de usuario
 	\begin{enumerate}
-	\item Deberá contar con un acceso a un puerto SD o USB para la descarga de datos. 
-	\item Deberá contar con un display y teclado para configuración de parámetros básicos.
-	\item Deberá poder graficar el patrón de descargas parciales actual en el display.
-	\item Deberá tener un puerto de acceso serial (preferentemente diferencial) para configuración y acceso a datos remoto.
-	
+	\item Deberá indicará su estado “ARMADO - DESARMADO” por medio de un led de estado.
+	\item Deberá permitir “ARMAR - DESARMAR” al sistema por medio de una tecla física.
+	\item Deberá realizar la acción de transferir a un \textit{pendrive} el contenido total de la memoria interna por medio de una tecla física.
 	\end{enumerate}
+\item Requerimientos de acceso a datos
+	\begin{enumerate}
+	\item El dispositivo deberá listar todos los patrones de DP almacenados bajo el siguiente identificador “AAMMDDhhmm” en base a la fecha de generación del patrón. 
+	\item El dispositivo deberá permitir seleccionar al patrón por medio de su identificador y solicitar su transferencia por puerto serie.
+	\end{enumerate}
+
 \end{enumerate}
 
 \section{5. Entregables principales del proyecto}
@@ -245,6 +266,7 @@ El presente proyecto no incluye:
 \item Manual de uso
 \item Diagrama esquemático
 \item Diagrama de instalación
+\item \textit{Firmware}
 \item Informe final
 
 \end{itemize}
@@ -255,171 +277,140 @@ El presente proyecto no incluye:
 \begin{enumerate}
 \item Planificación
 	\begin{enumerate}
-	\item Realizar el plan de proyecto (16hs)
+	\item Realizar el plan de proyecto (20 hs)
 	\end{enumerate}
 \item Recopilación de información
 	\begin{enumerate}
-	\item Búsqueda de información teórica de muestreo a alta velocidad (12hs)
-	\item Búsqueda de componentes para la etapa de adquisición analógica (12hs)
-	\item Búsqueda de información de puertos de comunicación de alta velocidad (4hs)
+	\item Búsqueda de información teórica de muestreo a alta velocidad (32 hs)
+	\item Búsqueda de componentes para la etapa de adquisición analógica (26 hs)
 	\end{enumerate}
-\item Análisis de periféricos de comunicación
+\item Diseño de y validación del \textit{hardware}
 	\begin{enumerate}
-	\item Codificar funciones para testear limitaciones en la comunicación con el ADC. (20hs)
-	\item Codificar funciones para simular la salida digital del ADC a alta velocidad. (20hs)
-	\item Codificar funciones para el trigger de disparo. (24hs)
+	\item Selección y cálculo de filtros. (10 hs)
+	\item Diseño del esquemático para la etapa de adquisición analógica. (20 hs)
+	\item Diseño del \textit{PCB} para la etapa de adquisición analógica. (12 hs)
+	\item Montaje de componentes. (8 hs)
+	\item Verificación y puesta en marcha del \textit{hardware}. (20 hs)
+	\item Validación de la etapa analógica por medio de inyección señales. (15 hs)
+	\item Codificar funciones para validar el diseño de la adquisición analógica. (30 hs)
 	\end{enumerate}
-\item Diseño de hardware
+\item Desarrollo módulo de adquisición
 	\begin{enumerate}
-	\item Selección y calculo de filtros. (8hs)
-	\item Selección de componentes. (20hs)
-	\item Diseño del esquemático para la etapa de adquisición analógica. (20hs)
-	\item Diseño del PCB para la etapa de adquisición analógica. (12hs)
-	\item Montaje de componentes. (8hs)
-	\item Verificación y puesta en marcha del hardware. (20hs)
-	\item Validación de señales analógicas. (8hs)
+	\item Codificar funciones de comunicación con ADC. (40 hs)
+	\item Codificar funciones de detección de cruce por cero. (15 hs)
+	\item Codificar funciones para el umbral de disparo. (24 hs)
 	\end{enumerate}
-\item Desarrollo modulo de adquisición
+\item Desarrollo módulos auxiliares
 	\begin{enumerate}
-	\item Codificar funciones de comunicación con ADC. (40hs)
-	\item Codificar funciones de detección de cruce por cero. (8hs)
-	\item Codificar funciones de integración entre la senoide de referencia y la descarga parcial. (24hs)
-	\item Integrar funciones de trigger. (12hs)
-	\item Testeo de integridad por medio de inyección de señales simuladas. (24hs)
-	\end{enumerate}
-\item Desarrollo modulo de comunicación por linea de comandos
-	\begin{enumerate}
-	\item Codificar funciones de comunicación para la UART. (16hs)
-	\end{enumerate}
-\item Desarrollo modulo interfaz de usuario
-	\begin{enumerate}
-	\item Codificar funciones de comunicación con display. (24hs)
-	\item Codificar funciones del teclado de entrada. (4hs)
-	\item Codificar menú de configuración. (20hs)
-	\end{enumerate}
-\item Desarrollo modulo de almacenamiento
-	\begin{enumerate}
-	\item Codificar funciones de almacenamiento USB. (40hs)
+	\item Codificar funciones de comunicación para la UART. (30 hs)
+	\item Codificar funciones del reloj de tiempo real. (20 hs)
+	\item Codificar funciones de botones de entrada y led de estado. (4 hs)
+	\item Codificar funciones de almacenamiento USB. (40 hs)
 	\end{enumerate}
 \item Integración
 	\begin{enumerate}
-	\item Integrar todos los módulos de software. (40hs) 	
-	\item Testeo funcional.	(30hs)
-	\item Diseño del esquemático final.	(24hs)
+	\item Integrar todos los módulos de software. (50 hs) 	
+	\item Pruebas funcionales.	(30 hs)
+	\item Integrar los módulos de funciones de adquisición. (50 hs)
 	\end{enumerate}
 \item Proceso final
 	\begin{enumerate}
-	\item Confeccionar manual de uso. (10hs) 	
-	\item Confeccionar memoria (50hs??)
-	\item Revisión final del documento (24hs??)
+	\item Confeccionar manual de uso. (10 hs) 	
+	\item Confeccionar memoria (50 hs)
+	\item Revisión final del documento (24 hs)
+	\item Diseño del esquemático final.	(20 hs)
 	\end{enumerate}
 \end{enumerate}
 
 Cantidad total de horas: (600 hs)
 
 
+\begin{landscape}
+
 \section{7. Diagrama de Activity On Node}
 \label{sec:AoN}
 
-\begin{consigna}{red}
-Armar el AoN a partir del WBS definido en la etapa anterior. 
-
-%La figura \ref{fig:AoN} fue elaborada con el paquete latex tikz y pueden consultar la siguiente referencia \textit{online}:
-
-%\url{https://www.overleaf.com/learn/latex/LaTeX_Graphics_using_TikZ:_A_Tutorial_for_Beginners_(Part_3)\%E2\%80\%94Creating_Flowcharts}
-
-\end{consigna}
-
 \begin{figure}[htpb]
 \centering 
-\includegraphics[width=.8\textwidth]{./Figuras/AoN.png}
+\includegraphics[width=1.6\textwidth]{./Figuras/AON.png}
 \caption{Diagrama en \textit{Activity on Node}}
 \label{fig:AoN}
 \end{figure}
-
-Indicar claramente en qué unidades están expresados los tiempos.
-De ser necesario indicar los caminos semicríticos y analizar sus tiempos mediante un cuadro.
-Es recomendable usar colores y un cuadro indicativo describiendo qué representa cada color, como se muestra en el siguiente ejemplo:
-
-
+\end{landscape}
 
 \section{8. Diagrama de Gantt}
 \label{sec:gantt}
 
-\begin{consigna}{red}
-Utilizar el software Gantter for Google Drive o alguno similar para dibujar el diagrama de Gantt.
-
-Existen muchos programas y recursos \textit{online} para hacer diagramas de gantt, entre las cuales destacamos:
-
-\begin{itemize}
-\item Planner
-\item GanttProject
-\item Trello + \textit{plugins}. En el siguiente link hay un tutorial oficial: \\ \url{https://blog.trello.com/es/diagrama-de-gantt-de-un-proyecto}
-\item Creately, herramienta online colaborativa. \\\url{https://creately.com/diagram/example/ieb3p3ml/LaTeX}
-\item Se puede hacer en latex con el paquete \textit{pgfgantt}\\ \url{http://ctan.dcc.uchile.cl/graphics/pgf/contrib/pgfgantt/pgfgantt.pdf}
-\end{itemize}
-
-Pegar acá una captura de pantalla del diagrama de Gantt, cuidando que la letra sea suficientemente grande como para ser legible. 
-Si el diagrama queda demasiado ancho, se puede pegar primero la ``tabla'' del Gantt y luego pegar la parte del diagrama de barras del diagrama de Gantt.
-
-Configurar el software para que en la parte de la tabla muestre los códigos del EDT (WBS).\\
-Configurar el software para que al lado de cada barra muestre el nombre de cada tarea.\\
-Revisar que la fecha de finalización coincida con lo indicado en el Acta Constitutiva.
-
-En la figura \ref{fig:gantt}, se muestra un ejemplo de diagrama de gantt realizado con el paquete de \textit{pgfgantt}. En la plantilla pueden ver el código que lo genera y usarlo de base para construir el propio.
-
-\begin{figure}[htbp]
-\begin{center}
-\begin{ganttchart}{1}{12}
-  \gantttitle{2020}{12} \\
-  \gantttitlelist{1,...,12}{1} \\
-  \ganttgroup{Group 1}{1}{7} \\
-  \ganttbar{Task 1}{1}{2} \\
-  \ganttlinkedbar{Task 2}{3}{7} \ganttnewline
-  \ganttmilestone{Milestone o hito}{7} \ganttnewline
-  \ganttbar{Final Task}{8}{12}
-  \ganttlink{elem2}{elem3}
-  \ganttlink{elem3}{elem4}
-\end{ganttchart}
-\end{center}
-\caption{Diagrama de gantt de ejemplo}
-\label{fig:gantt}
+\begin{figure}[htpb]
+\centering 
+\includegraphics[width=1\textwidth]{./Figuras/tablaGant.png}
+\caption{Tareas Gantt}
+\label{fig:AoN}
 \end{figure}
 
-\end{consigna}
+\begin{landscape}
+\begin{figure}[htpb]
+\centering 
+\includegraphics[width=1.6\textwidth]{./Figuras/calendarioGant.png}
+\caption{Calendario Gantt}
+\label{fig:AoN}
+\end{figure}
+\end{landscape}
+
 
 \section{9. Matriz de uso de recursos de materiales}
 \label{sec:recursos}
-
-
-\begin{table}[htpb]
-\label{tab:recursos}
+\begin{table}[H]
 \centering
-\begin{tabularx}{\linewidth}{@{}|c|X|X|X|X|X|@{}}
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{|c|c|c|c|c|c|}
 \hline
-\cellcolor[HTML]{C0C0C0} & \cellcolor[HTML]{C0C0C0} & \multicolumn{4}{c|}{\cellcolor[HTML]{C0C0C0}Recursos requeridos (horas)} \\ \cline{3-6} 
-\multirow{-2}{*}{\cellcolor[HTML]{C0C0C0}\begin{tabular}[c]{@{}c@{}}Código\\ WBS\end{tabular}} & \multirow{-2}{*}{\cellcolor[HTML]{C0C0C0}\begin{tabular}[c]{@{}c@{}}Nombre \\ tarea\end{tabular}} & Material 1 & Material 2 & Material 3 & Material 4 \\ \hline
- &  &  &  &  &  \\ \hline
- &  &  &  &  &  \\ \hline
- &  &  &  &  &  \\ \hline
- &  &  &  &  &  \\ \hline
-\end{tabularx}%
+\rowcolor[HTML]{C0C0C0} 
+\cellcolor[HTML]{C0C0C0} &
+  \cellcolor[HTML]{C0C0C0} &
+  \multicolumn{4}{c|}{\cellcolor[HTML]{C0C0C0}Recursos requeridos (horas)} \\ \cline{3-6} 
+\rowcolor[HTML]{C0C0C0} 
+\multirow{-3}{*}{\cellcolor[HTML]{C0C0C0}\begin{tabular}[c]{@{}c@{}}Código WBS\end{tabular}} &
+  \multirow{-3}{*}{\cellcolor[HTML]{C0C0C0}Nombre de la tarea} & PC & Placa digital & Placa analógica & Instrumentos \\ \hline
+\multicolumn{6}{|c|}{\cellcolor[HTML]{7ACFF5}1. Planificacion} \\ \hline
+1.1 & Realizar el plan de proyecto & 16 hs &  &  &    \\ \hline  
+\multicolumn{6}{|c|}{\cellcolor[HTML]{FFE599}2. Recopilación de información} \\ \hline
+2.1 & Búsqueda de información teórica de muestreo a alta velocidad & 32 hs &  &  &    \\ \hline
+2.2 & Búsqueda de componentes para la etapa de adquisición analógica & 30 hs &  &  &    \\ \hline
+\multicolumn{6}{|c|}{\cellcolor[HTML]{C3ABD0}3 Diseño de y validación del \textit{hardware}} \\ \hline
+3.1 & Selección y cálculo de filtros. & 10 hs &  &  &    \\ \hline
+3.2 & Diseño del esquemático para la etapa de adquisición analógica. & 20 hs &  &  &    \\ \hline
+3.3 & Diseño del \textit{PCB} para la etapa de adquisición analógica. & 12 hs &  &  &    \\ \hline
+3.4 & Montaje de componentes. &  &  & 8 hs &    \\ \hline
+3.5 & Verificación y puesta en marcha del \textit{hardware}. &  &  & 20 hs & 20 hs  \\ \hline
+3.6 & Validación de la etapa analógica por medio de inyección señales. &  &  & 15 hs & 15 hs   \\ \hline
+3.7 & Codificar funciones para validar el diseño de la adquisición analógica. & 30 hs & 30 hs &  &   \\ \hline
+\multicolumn{6}{|c|}{\cellcolor[HTML]{FF3333}4 Desarrollo módulo de adquisición} \\ \hline
+4.1 & Codificar funciones de comunicación con ADC. & 40 hs & 40 hs &  &    \\ \hline
+4.2 & Codificar funciones de detección de cruce por cero. & 15 hs & 15 hs &  & 5 hs   \\ \hline
+4.3 & Codificar funciones para el umbral de disparo. & 24 hs & 24 hs &  &  5 hs  \\ \hline
+\multicolumn{6}{|c|}{\cellcolor[HTML]{FFFF00}5 Desarrollo módulo auxiliares} \\ \hline
+5.1 & Codificar funciones de comunicación para la UART. & 30 hs & 30 hs &  &    \\ \hline
+5.2 & Codificar funciones del reloj de tiempo real. & 20 hs & 20 hs &  &    \\ \hline
+5.3 & Codificar funciones de botones de entrada y led de estado. & 4 hs & 4 hs &  &    \\ \hline
+5.4 & Codificar funciones de almacenamiento USB. & 40 hs & 40 hs &  &    \\ \hline
+\multicolumn{6}{|c|}{\cellcolor[HTML]{66CC00}6 Integración} \\ \hline
+6.1 & Integrar todos los módulos de software. & 50 hs & 30 hs & 30 hs & 10 hs   \\ \hline
+6.2 & Pruebas funcionales. & 30 hs & 30 hs & 30 hs & 30 hs   \\ \hline
+6.3 & Integrar los módulos de funciones de adquisición. & 50 hs & 50 hs & 50 hs & 50 hs  \\ \hline
+\multicolumn{6}{|c|}{\cellcolor[HTML]{EA6B66}7 Proceso final} \\ \hline
+7.1 & Confeccionar manual de uso. & 10 hs &  &  &    \\ \hline
+7.2 & Confeccionar memoria. & 50 hs &  &  &    \\ \hline
+7.3 & Revisión final del documento. & 24 hs &  &  &    \\ \hline
+7.4 & Diseño del esquemático final. & 20 hs &  &  &    \\ \hline  
+\rowcolor[HTML]{C0C0C0} 
+\multicolumn{2}{|c|}{\cellcolor[HTML]{C0C0C0} Totales} & 539 hs & 295 hs & 153 hs & 135 hs    \\ \hline
+\end{tabular}%
+}
 \end{table}
-
 
 \section{10. Presupuesto detallado del proyecto}
 \label{sec:presupuesto}
-
-\begin{consigna}{red}
-Si el proyecto es complejo entonces separarlo en partes:
-\begin{itemize}
-\item Un total global, indicando el subtotal acumulado por cada una de las áreas.
-\item El desglose detallado del subtotal de cada una de las áreas.
-\end{itemize}
-
-IMPORTANTE: No olvidarse de considerar los COSTOS INDIRECTOS.
-
-\end{consigna}
 
 \begin{table}[htpb]
 \centering
@@ -432,24 +423,20 @@ Descripción &
   \multicolumn{1}{c|}{\cellcolor[HTML]{C0C0C0}Cantidad} &
   \multicolumn{1}{c|}{\cellcolor[HTML]{C0C0C0}Valor unitario} &
   \multicolumn{1}{c|}{\cellcolor[HTML]{C0C0C0}Valor total} \\ \hline
- &
-  \multicolumn{1}{c|}{} &
-  \multicolumn{1}{c|}{} &
-  \multicolumn{1}{c|}{} \\ \hline
- &
-  \multicolumn{1}{c|}{} &
-  \multicolumn{1}{c|}{} &
-  \multicolumn{1}{c|}{} \\ \hline
-\multicolumn{1}{|l|}{} &
-   &
-   &
-   \\ \hline
-\multicolumn{1}{|l|}{} &
-   &
-   &
-   \\ \hline
+ Modulo K210 Maix Dock&
+  \multicolumn{1}{c|}{1} &
+  \multicolumn{1}{c|}{25\euro} &
+  \multicolumn{1}{c|}{25\euro} \\ \hline
+ PCB&
+  \multicolumn{1}{c|}{1} &
+  \multicolumn{1}{c|}{25\euro} &
+  \multicolumn{1}{c|}{25\euro} \\ \hline
+ Componentes etapa analógica&
+  \multicolumn{1}{c|}{1} &
+  \multicolumn{1}{c|}{100\euro} &
+  \multicolumn{1}{c|}{100\euro} \\ \hline
 \multicolumn{3}{|c|}{SUBTOTAL} &
-  \multicolumn{1}{c|}{} \\ \hline
+  \multicolumn{1}{c|}{150\euro} \\ \hline
 \rowcolor[HTML]{C0C0C0} 
 \multicolumn{4}{|c|}{\cellcolor[HTML]{C0C0C0}COSTOS INDIRECTOS} \\ \hline
 \rowcolor[HTML]{C0C0C0} 
@@ -457,33 +444,35 @@ Descripción &
   \multicolumn{1}{c|}{\cellcolor[HTML]{C0C0C0}Cantidad} &
   \multicolumn{1}{c|}{\cellcolor[HTML]{C0C0C0}Valor unitario} &
   \multicolumn{1}{c|}{\cellcolor[HTML]{C0C0C0}Valor total} \\ \hline
-\multicolumn{1}{|l|}{} &
-   &
-   &
-   \\ \hline
-\multicolumn{1}{|l|}{} &
-   &
-   &
-   \\ \hline
-\multicolumn{1}{|l|}{} &
-   &
-   &
-   \\ \hline
+ Osciloscopio Siglent SDS1202X-E &
+  \multicolumn{1}{c|}{1} &
+  \multicolumn{1}{c|}{365\euro} &
+  \multicolumn{1}{c|}{365\euro} \\ \hline
+ Generador de onda arbitraria DDS FY6900 &
+  \multicolumn{1}{c|}{1} &
+  \multicolumn{1}{c|}{85\euro} &
+  \multicolumn{1}{c|}{85\euro} \\ \hline
+ Fuente de laboratorio Minleaf NPS3010W &
+  \multicolumn{1}{c|}{1} &
+  \multicolumn{1}{c|}{40\euro} &
+  \multicolumn{1}{c|}{40\euro} \\ \hline
+ Cables y adaptadores SMA a BNC &
+  \multicolumn{1}{c|}{1} &
+  \multicolumn{1}{c|}{20\euro} &
+  \multicolumn{1}{c|}{20\euro} \\ \hline
 \multicolumn{3}{|c|}{SUBTOTAL} &
-  \multicolumn{1}{c|}{} \\ \hline
+  \multicolumn{1}{c|}{510\euro} \\ \hline
 \rowcolor[HTML]{C0C0C0}
-\multicolumn{3}{|c|}{TOTAL} &
+\multicolumn{3}{|c|}{TOTAL} & 660\euro
    \\ \hline
 \end{tabularx}%
 \end{table}
-
+(*)Valores aproximados
 
 \section{11. Matriz de asignación de responsabilidades}
 \label{sec:responsabilidades}
-\begin{consigna}{red}
-Establecer la matriz de asignación de responsabilidades y el manejo de la autoridad completando la siguiente tabla:
 
-\begin{table}[htpb]
+\begin{table}[H]
 \centering
 \resizebox{\textwidth}{!}{%
 \begin{tabular}{|c|c|c|c|c|c|}
@@ -491,24 +480,50 @@ Establecer la matriz de asignación de responsabilidades y el manejo de la autor
 \rowcolor[HTML]{C0C0C0} 
 \cellcolor[HTML]{C0C0C0} &
   \cellcolor[HTML]{C0C0C0} &
-  \multicolumn{4}{c|}{\cellcolor[HTML]{C0C0C0}Listar todos los nombres y roles del proyecto} \\ \cline{3-6} 
+  \multicolumn{3}{c|}{\cellcolor[HTML]{C0C0C0}Listar todos los nombres y roles del proyecto} \\ \cline{3-5} 
 \rowcolor[HTML]{C0C0C0} 
 \cellcolor[HTML]{C0C0C0} &
   \cellcolor[HTML]{C0C0C0} &
   Responsable &
   Orientador &
-  Equipo &
-  Cliente \\ \cline{3-6} 
+  Cliente \\ \cline{3-5} 
 \rowcolor[HTML]{C0C0C0} 
 \multirow{-3}{*}{\cellcolor[HTML]{C0C0C0}\begin{tabular}[c]{@{}c@{}}Código\\ WBS\end{tabular}} &
   \multirow{-3}{*}{\cellcolor[HTML]{C0C0C0}Nombre de la tarea} &
   \authorname &
-  \supname &
-  Nombre de alguien &
+  \cosupname &
   \clientename \\ \hline
- &  &  &  &  &  \\ \hline
- &  &  &  &  &  \\ \hline
- &  &  &  &  &  \\ \hline
+\multicolumn{5}{|c|}{\cellcolor[HTML]{7ACFF5}1. Planificacion} \\ \hline
+1.1 & Realizar el plan de proyecto & P & I & A   \\ \hline  
+\multicolumn{5}{|c|}{\cellcolor[HTML]{FFE599}2. Recopilación de información} \\ \hline
+2.1 & Búsqueda de información teórica de muestreo a alta velocidad & P & C & I   \\ \hline
+2.2 & Búsqueda de componentes para la etapa de adquisición analógica & P & C & I   \\ \hline
+\multicolumn{5}{|c|}{\cellcolor[HTML]{C3ABD0}3 Diseño de y validación del \textit{hardware}} \\ \hline
+3.1 & Selección y cálculo de filtros. & P & C & C   \\ \hline
+3.2 & Diseño del esquemático para la etapa de adquisición analógica. & P & I & I   \\ \hline
+3.3 & Diseño del \textit{PCB} para la etapa de adquisición analógica. & P & I & I   \\ \hline
+3.4 & Montaje de componentes. & P & - & -   \\ \hline
+3.5 & Verificación y puesta en marcha del \textit{hardware}. & P & I & I  \\ \hline
+3.6 & Validación de la etapa analógica por medio de inyección señales. & P & I & I   \\ \hline
+3.7 & Codificar funciones para validar el diseño de la adquisición analógica. & P & - & -  \\ \hline
+\multicolumn{5}{|c|}{\cellcolor[HTML]{FF3333}4 Desarrollo módulo de adquisición} \\ \hline
+4.1 & Codificar funciones de comunicación con ADC. & P & - & -   \\ \hline
+4.2 & Codificar funciones de detección de cruce por cero. & P & - & -   \\ \hline
+4.3 & Codificar funciones para el umbral de disparo. & P & - & -   \\ \hline
+\multicolumn{5}{|c|}{\cellcolor[HTML]{FFFF00}5 Desarrollo módulo auxiliares} \\ \hline
+5.1 & Codificar funciones de comunicación para la UART. & P & - & -   \\ \hline
+5.2 & Codificar funciones del reloj de tiempo real. & P & - & -  \\ \hline
+5.3 & Codificar funciones de botones de entrada y led de estado. & P & - & -   \\ \hline
+5.4 & Codificar funciones de almacenamiento USB. & P & - & -   \\ \hline
+\multicolumn{5}{|c|}{\cellcolor[HTML]{66CC00}6 Integración} \\ \hline
+6.1 & Integrar todos los módulos de software. & P & I & I   \\ \hline
+6.2 & Pruebas funcionales. & P & C & A  \\ \hline
+6.3 & Integrar los módulos de funciones de adquisición. & P & I & I  \\ \hline
+\multicolumn{5}{|c|}{\cellcolor[HTML]{EA6B66}7 Proceso final} \\ \hline
+7.1 & Confeccionar manual de uso. & P & I & A   \\ \hline
+7.2 & Confeccionar memoria. & P & C & A   \\ \hline
+7.3 & Revisión final del documento. & P & C & A   \\ \hline
+7.4 & Diseño del esquemático final. & P & I & I   \\ \hline  
 \end{tabular}%
 }
 \end{table}
@@ -523,13 +538,6 @@ Referencias:
 	\item C = Consultado
 \end{itemize}
 } %footnotesize
-
-Una de las columnas debe ser para el Director, ya que se supone que participará en el proyecto.
-A su vez se debe cuidar que no queden muchas tareas seguidas sin ``A'' o ``I''.
-
-Importante: es redundante poner ``I/A'' o ``I/C'', porque para aprobarlo o responder consultas primero la persona debe ser informada.
-
-\end{consigna}
 
 \section{12. Gestión de riesgos}
 \label{sec:riesgos}

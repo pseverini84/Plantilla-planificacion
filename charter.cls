@@ -70,7 +70,9 @@
 \usepackage{tabularx}
 \usepackage{pgfgantt} 
 \usepackage{graphicx}
-
+\usepackage{eurosym}
+\usepackage{rotating}
+\usepackage{pdflscape}
 
 %\usepackage{tikz}
 %\usetikzlibrary{arrows, arrows.meta, calc, positioning, quotes, shapes}
@@ -157,6 +159,9 @@
 	
 	{\normalsize Director:\\}
 	{\Large \supname \hspace{1px} (\pertesupname) \\}
+	\vspace{1cm}
+	{\normalsize Codirector:\\}
+	{\Large \cosupname \hspace{1px} (\pertesupname) \\}
 	\vspace{2cm}
 		
 	{\normalsize Jurados:\\}	
