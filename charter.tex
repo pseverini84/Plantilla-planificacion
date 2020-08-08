@@ -67,6 +67,7 @@ Revisión & \multicolumn{1}{c|}{\cellcolor[HTML]{C0C0C0}Detalles de los cambios 
 1.1      & 	Se agrega del punto 1 al 6	 						& 05/07/2020 \\ \hline
 1.2      & 	Se agregan las correcciones del punto 1 al 6		& 15/07/2020 \\ \hline
 1.3      & 	Se agrega del punto 7 al 11							& 23/07/2020 \\ \hline
+1.4      & 	Se agrega del punto 12 al 17						& 08/08/2020 \\ \hline
 \end{tabularx}
 \end{table}
 
@@ -372,7 +373,7 @@ Cantidad total de horas: (600 hs)
 \rowcolor[HTML]{C0C0C0} 
 \multirow{-3}{*}{\cellcolor[HTML]{C0C0C0}\begin{tabular}[c]{@{}c@{}}Código WBS\end{tabular}} &
   \multirow{-3}{*}{\cellcolor[HTML]{C0C0C0}Nombre de la tarea} & PC & Placa digital & Placa analógica & Instrumentos \\ \hline
-\multicolumn{6}{|c|}{\cellcolor[HTML]{7ACFF5}1. Planificacion} \\ \hline
+\multicolumn{6}{|c|}{\cellcolor[HTML]{7ACFF5}1. Planificación} \\ \hline
 1.1 & Realizar el plan de proyecto & 16 hs &  &  &    \\ \hline  
 \multicolumn{6}{|c|}{\cellcolor[HTML]{FFE599}2. Recopilación de información} \\ \hline
 2.1 & Búsqueda de información teórica de muestreo a alta velocidad & 32 hs &  &  &    \\ \hline
@@ -492,8 +493,8 @@ Descripción &
   \multirow{-3}{*}{\cellcolor[HTML]{C0C0C0}Nombre de la tarea} &
   \authorname &
   \cosupname &
-  \clientename \\ \hline
-\multicolumn{5}{|c|}{\cellcolor[HTML]{7ACFF5}1. Planificacion} \\ \hline
+  \supname \\ \hline
+\multicolumn{5}{|c|}{\cellcolor[HTML]{7ACFF5}1. Planificación} \\ \hline
 1.1 & Realizar el plan de proyecto & P & I & A   \\ \hline  
 \multicolumn{5}{|c|}{\cellcolor[HTML]{FFE599}2. Recopilación de información} \\ \hline
 2.1 & Búsqueda de información teórica de muestreo a alta velocidad & P & C & I   \\ \hline
@@ -542,31 +543,34 @@ Referencias:
 \section{12. Gestión de riesgos}
 \label{sec:riesgos}
 
-\begin{consigna}{red}
 a) Identificación de los riesgos (al menos cinco) y estimación de sus consecuencias:
  
-Riesgo 1: detallar el riesgo (riesgo es algo que si ocurre altera los planes previstos)
+Riesgo 1: Restricciones de velocidad para realizar la adquisición. 
 \begin{itemize}
-\item Severidad (S): mientras más severo, más alto es el número (usar números del 1 al 10).\\
-Justificar el motivo por el cual se asigna determinado número de severidad (S).
-\item Probabilidad de ocurrencia (O): mientras más probable, más alto es el número (usar del 1 al 10).\\
-Justificar el motivo por el cual se asigna determinado número de (O). 
+\item Severidad (8): Si el microprocesador no es adecuado para realizar la adquisición a alta velocidad, se deberá buscar otro procesador y migrar el trabajo existente a la nueva plataforma generando retrasos en el cronograma, no solo por el trabajo adicional sino por el tiempo de espera en la adquisición del nuevo procesador.
+\item Probabilidad de ocurrencia (6): Puede suceder ya que el microprocesador elegido si bien opera en frecuencias de procesador de 500 MHz, no tiene apéndice de especificación de la velocidad de los periféricos. 
 \end{itemize}   
 
-Riesgo 2:
+Riesgo 2: Problemas de deformación de señal en la etapa analógica.
 \begin{itemize}
-\item Severidad (S): 
-\item Ocurrencia (O):
+\item Severidad (9): Si la adaptación y preparación de la señal deforman la misma, la adquisición realizada podría no tener utilidad, obligando a redisenar la etapa.  
+\item Ocurrencia (5): Puede suceder ya que el diseño de alta frecuencia depende de muchas características de diseño que deben realizarse sin error.
 \end{itemize}
 
-Riesgo 3:
+Riesgo 3: Destrucción del prototipo de hardware
 \begin{itemize}
-\item Severidad (S): 
-\item Ocurrencia (O):
+\item Severidad (8): La perdida del prototipo de hardware generaría un retraso en el cronograma de trabajo.  
+\item Ocurrencia (5): Es probable que suceda en la etapa de prueba.  
+\end{itemize}
+
+Riesgo 4: El instrumental adquirido no cubre con los requerimientos necesitados
+\begin{itemize}
+\item Severidad (7): Impactaría en el costo y en el tiempo de adquisición del nuevo instrumental.  
+\item Ocurrencia (2): Es poco probable que suceda ya que las características necesitadas y las ofrecidas son conocidas .  
 \end{itemize}
 
 
-b) Tabla de gestión de riesgos:      (El RPN se calcula como RPN=SxO)
+b) Tabla de gestión de riesgos:
 
 \begin{table}[htpb]
 \centering
@@ -574,41 +578,161 @@ b) Tabla de gestión de riesgos:      (El RPN se calcula como RPN=SxO)
 \hline
 \rowcolor[HTML]{C0C0C0} 
 Riesgo & S & O & RPN & S* & O* & RPN* \\ \hline
-       &   &   &     &    &    &      \\ \hline
-       &   &   &     &    &    &      \\ \hline
-       &   &   &     &    &    &      \\ \hline
-       &   &   &     &    &    &      \\ \hline
-       &   &   &     &    &    &      \\ \hline
+1      & 8  & 6  & \cellcolor[HTML]{EA6B66}48  & 4   & 6  & 24     \\ \hline
+2      & 9  & 5  & \cellcolor[HTML]{EA6B66}40  & 9   & 3  & 27     \\ \hline
+3      & 8  & 5  & \cellcolor[HTML]{EA6B66}40  & 8   & 2  & 16     \\ \hline
+4      & 7  & 2  & 14  & 7   & 2  & 14     \\ \hline
 \end{tabularx}%
 \end{table}
 
 Criterio adoptado: 
-Se tomarán medidas de mitigación en los riesgos cuyos números de RPN sean mayores a ....
+Se tomarán medidas de mitigación en los riesgos cuyos números de RPN sean mayores a 30
 
 Nota: los valores marcados con (*) en la tabla corresponden luego de haber aplicado la mitigación.
 
 c) Plan de mitigación de los riesgos que originalmente excedían el RPN máximo establecido:
  
-Riesgo 1: Plan de mitigación (si por el RPN fuera necesario elaborar un plan de mitigación).
-  Nueva asignación de S y O, con su respectiva justificación:
-  - Severidad (S): mientras más severo, más alto es el número (usar números del 1 al 10).
-          Justificar el motivo por el cual se asigna determinado número de severidad (S).
-  - Probabilidad de ocurrencia (O): mientras más probable, más alto es el número (usar del 1 al 10).
-          Justificar el motivo por el cual se asigna determinado número de (O).
+Riesgo 1: Se seleccionara y comprara un microprocesador alternativo por si el primero no cumple con los requisitos.
+\begin{itemize}  
+\item Severidad (4): La severidad desciende ya que en caso de que el primer microcontrolador no cumpla con los requisitos se dispondrá de un segundo modelo para seguir con la implementación. 
+\item Probabilidad de ocurrencia (6): La probabilidad de ocurrencia se mantiene.
+\end{itemize}
 
-Riesgo 2: Plan de mitigación (si por el RPN fuera necesario elaborar un plan de mitigación).
- 
-Riesgo 3: Plan de mitigación (si por el RPN fuera necesario elaborar un plan de mitigación)
-
-\end{consigna}
+Riesgo 2: La etapa analógica se diseñara teniendo en cuenta las buenas practicas en diseños de alta frecuencia, se calcularan impedancias características de cada etapa realizando microstrip donde corresponda y se seleccionaran cuidadosamente los componentes.
+\begin{itemize}  
+\item Severidad (9): La severidad se mantiene.
+\item Probabilidad de ocurrencia (3): La probabilidad de ocurrencia desciende ya que se aplicaran controles y esfuerzo adicional en el diseño y calculo de la etapa.
+\end{itemize}
+   
+Riesgo 3: Se tendrá una placa de prototipo de backup.
+\begin{itemize}  
+\item Severidad (8): La severidad se mantiene.
+\item Probabilidad de ocurrencia (2): La probabilidad de ocurrencia desciende ya que se dispondrá de una placa auxiliar para remplazar la principal.
+\end{itemize}
 
 
 \section{13. Gestión de la calidad}
 \label{sec:calidad}
 
-\begin{consigna}{red}
 Para cada uno de los requerimientos del proyecto indique:
 \begin{itemize} 
+\item Req \#1: El dispositivo deberá, mediante el procesamiento de las adquisiciones, detectar los picos máximos de los pulsos de DP y representarlos sobre una senoide de referencia de frecuencia industrial - 50 Hertz - en fase con la tensión de ensayo (generar un patrón de DP).
+
+Verificación y validación:
+
+\begin{itemize}
+\item Verificación: Revisión de algoritmos, circuito esquemático y hojas de datos.
+\item Validación: Se inyectara en la etapa de entrada un señales simulada provistas por el cliente con el fin de validar que el patrón de DP obtenido sea el esperado.
+\end{itemize}
+
+\item Req \#2: El dispositivo deberá funcionar como un sistema \textit{"stand-alone"}.
+
+Verificación y validación:
+
+\begin{itemize}
+\item Verificación: Sin acción asociada
+\item Validación: Se realizaran todas la pruebas solo utilizando el dispositivo.
+\end{itemize}
+
+\item Req \#3: El dispositivo debe mantener la fecha y hora por medio de un RTC.
+
+Verificación y validación:
+
+\begin{itemize}
+\item Verificación: Revisión de algoritmos, circuito esquemático y hojas de datos.
+\item Validación: Se ingresara una hora fecha y hora en el sistema, se interrumpirá el suministro eléctrico y una vez restablecido se verificara la hora del sistema.
+\end{itemize}
+
+\item Req \#4: El dispositivo deberá tener un puerto de acceso serial (preferentemente diferencial) para configuración y acceso a datos remoto.
+
+Verificación y validación:
+
+\begin{itemize}
+\item Verificación: Revisión de circuito esquemático. 
+\item Validación: Se realizara una inspección visual y un caso practico de envió de comando para validar su funcionamiento.
+\end{itemize}
+
+\item Req \#5: El dispositivo deberá contar con un puerto USB para la descarga de los patrones de DP.
+
+Verificación y validación:
+
+\begin{itemize}
+\item Verificación: Revisión de circuito esquemático.
+\item Validación: Se realizara una inspección visual y un caso practico de descarga de datos para validar su funcionamiento.
+\end{itemize}
+
+\item Req \#6: Requerimientos asociados a la configuración.
+
+Verificación y validación:
+
+\begin{itemize}
+\item Verificación: Se realizaran paquete de prueba de configuración que incluyan tramas de configuración y valores esperados en el equipo luego de recibir la trama.
+\item Validación: Se realizara la configuración completa del equipo junto al cliente con el fin de recibir la aprobación del mismo.
+\end{itemize}
+
+\item Req \#7: Requerimientos asociados al modo de trabajo
+
+Verificación y validación:
+
+\begin{itemize}
+\item Verificación:
+\item Validación: 
+\end{itemize}
+
+\item Req \#8: La entrada de señal de referencia debe poder detectar los cruces por cero de una senoide de 50 Hz, y saber su polaridad.
+
+Verificación y validación:
+
+\begin{itemize}
+\item Verificación: Se inyectaran señales de 50 Hz y se verificaran los resultados obtenidos con un osciloscopio y el mismo sistema.
+\item Validación: Sin acción asociada.
+\end{itemize}
+
+\item Req \#9: La entrada de señal de referencia debe ser opto-acoplada.
+
+Verificación y validación:
+
+\begin{itemize}
+\item Verificación: Revisión de circuito esquemático y hojas de dato.
+\item Validación: Sin acción asociada. 
+\end{itemize}
+
+\item Req \#10: El dispositivo deberá llevar un contador en milisegundos a partir de la señal de cruce por cero. De forma tal que se pueda saber en todo momento si está transcurriendo un semiciclo positivo o negativo y saber cuánto tiempo transcurrió desde su inicio.
+
+Verificación y validación:
+
+\begin{itemize}
+\item Verificación: Se inyectaran señales de 50 Hz y se verificaran los resultados obtenidos con un osciloscopio y el mismo sistema.
+\item Validación: Sin acción asociada.
+\end{itemize}
+
+\item Req \#11: Requerimientos asociados a la adquisición de la señal analógica
+
+Verificación y validación:
+
+\begin{itemize}
+\item Verificación: Se inyectaran señales simuladas en la etapa de entrada, dentro de los margenes de frecuencia y tension de trabajo. La señales obtenidas por el dispositivo serán comparadas con las medidas por un osciloscopio a la entrada y a la salida del filtro analógico. También se inyectaran señales con frecuencias por encima de la operativa con el fin de detectar si el filtro esta cortando correctamente.
+\item Validación: Se inyectaran señales simuladas provistas por el cliente y se analizaran en conjunto los resultados.
+\end{itemize}
+
+\item Req \#12: Requerimientos asociados a la interfaz de usuario.
+
+Verificación y validación:
+
+\begin{itemize}
+\item Verificación: Revisión de circuito esquemático y funciones.
+\item Validación: Se realizara una operatoria de activación y descarga junto al cliente con el fin de recibir la aprobación del mismo.
+\end{itemize}
+
+\item Req \#13: Requerimientos de acceso a datos
+
+Verificación y validación:
+
+\begin{itemize}
+\item Verificación: Revisión de funciones y diagramas.
+\item Validación: Se realizara una operatoria de acceso a datos junto al cliente con el fin de recibir la aprobación del mismo. 
+\end{itemize}
+
 \item Req \#1: Copiar acá el requerimiento.
 
 Verificación y validación:
@@ -620,61 +744,74 @@ Detallar
 Detallar  
 \end{itemize}
 
+\item Req \#1: Copiar acá el requerimiento.
+
+Verificación y validación:
+
+\begin{itemize}
+\item Verificación para confirmar si se cumplió con lo requerido antes de mostrar el sistema al cliente:\\
+Detallar 
+\item Validación con el cliente para confirmar que está de acuerdo en que se cumplió con lo requerido:\\
+Detallar  
 \end{itemize}
 
-Tener en cuenta que en este contexto se pueden mencionar simulaciones, cálculos, revisión de hojas de datos, consulta con expertos, etc.
 
-\end{consigna}
+\end{itemize}
+
 
 \section{14. Comunicación del proyecto}
 \label{sec:comunicaciones}
-
-\begin{consigna}{red}
-El plan de comunicación del proyecto es el siguiente:
-\end{consigna}
 
 % Please add the following required packages to your document preamble:
 % \usepackage{graphicx}
 % \usepackage[table,xcdraw]{xcolor}
 % If you use beamer only pass "xcolor=table" option, i.e. \documentclass[xcolor=table]{beamer}
-\begin{table}[htpb]
+\begin{table}[H]
 \centering
-\resizebox{\textwidth}{!}{%
-\begin{tabular}{|c|c|c|c|c|c|}
+\begin{tabularx}{\linewidth}{@{}|X|X|X|X|X|X|@{}}
 \hline
 \rowcolor[HTML]{C0C0C0} 
 \multicolumn{6}{|c|}{\cellcolor[HTML]{C0C0C0}PLAN DE COMUNICACIÓN DEL PROYECTO}           \\ \hline
 \rowcolor[HTML]{C0C0C0} 
 ¿Qué comunicar? & Audiencia & Propósito & Frecuencia & Método de comunicac. & Responsable \\ \hline
-                &           &           &            &                      &             \\ \hline
-                &           &           &            &                      &             \\ \hline
-                &           &           &            &                      &             \\ \hline
-                &           &           &            &                      &             \\ \hline
-                &           &           &            &                      &             \\ \hline
-\end{tabular}%
-}
+Avances         & Dr.Ing.Marcos Maillot, Ing. Cristian Bonini & Solucionar problemas, anticipar desvíos, prevenir atrasos.          & Quincenal  & Mail			        & Pablo Severini            \\ \hline
+Consultas       & Dr.Ing.Marcos Maillot, Ing. Cristian Bonini & Consultar dudas teóricas y de diseño  
+& Quincenal  	& Video-conferencia     & Pablo Severini            \\ \hline
+Avances con plan de trabajo         & Patricio Bos, Ariel Lutemberg  &      Semanal     &  Mail          &                      & Pablo Severini            \\ \hline
+\end{tabularx}
 \end{table}
 
 \section{15. Gestión de Compras}
 \label{sec:compras}
+Compra: Componentes electrónicos
+Proveedor: Mouser
+Criterios de selección: Calidad, precio, disponibilidad de componentes y envíos Portugal.
 
-\begin{consigna}{red}
-En caso de tener que comprar elementos o contratar servicios:
-a) Explique con qué criterios elegiría a un proveedor.
-b) Redacte el Statement of Work correspondiente.
-\end{consigna}
+Compra: Osciloscopio Siglent SDS1202X-E
+Proveedor: Welectron GmbH
+Criterios de selección: Precio, es representante oficial de Sigilent y hace envíos a Portugal.
+
+Compra: DDS FY6900
+Proveedor: Amazon
+Criterios de selección: Precio, disponibilidad y envíos rápidos a Portugal.
+
+Compra: Fuente Minleaf NPS3010W
+Proveedor: Amazon
+Criterios de selección: Precio, disponibilidad y envíos rápidos a Portugal.
+
+Compra: Cables y adaptadores SMA
+Proveedor: Amazon
+Criterios de selección: Precio, disponibilidad y envíos rápidos a Portugal.
+
+Compra: PCB
+Proveedor: JLCPCB
+Criterios de selección: Precio, tiempo producción y hace envíos por DHL.
+
 
 \section{16. Seguimiento y control}
 \label{sec:seguimiento}
 
-\begin{consigna}{red}
-Para cada tarea del proyecto establecer la frecuencia y los indicadores con los se seguirá su avance y quién será el responsable de hacer dicho seguimiento y a quién debe comunicarse la situación (en concordancia con el Plan de Comunicación del proyecto).
-
-El indicador de avance tiene que ser algo medible, mejor incluso si se puede medir en \% de avance. Por ejemplo,se pueden indicar en esta columna cosas como ``cantidad de conexiones ruteadeas'' o ``cantidad de funciones implementadas'', pero no algo genérico y ambiguo como ``\%'', porque el lector no sabe porcentaje de qué cosa.
-
-\end{consigna}
-
-\begin{table}[!htpb]
+\begin{table}[H]
 \centering
 \begin{tabularx}{\linewidth}{@{}|X|X|X|X|X|X|@{}}
 \hline
@@ -682,11 +819,52 @@ El indicador de avance tiene que ser algo medible, mejor incluso si se puede med
 \multicolumn{6}{|c|}{\cellcolor[HTML]{C0C0C0}SEGUIMIENTO DE AVANCE}                                                                       \\ \hline
 \rowcolor[HTML]{C0C0C0} 
 Tarea del WBS & Indicador de avance & Frecuencia de reporte & Resp. de seguimiento & Persona a ser informada & Método de comunic. \\ \hline
- &  &  &  &  &  \\ \hline
- &  &  &  &  &  \\ \hline
- &  &  &  &  &  \\ \hline
- &  &  &  &  &  \\ \hline
- &  &  &  &  &  \\ \hline
+1.1 & Cantidad de puntos completados & Semanal & Pablo Severini & Patricio Bos, Ariel Lutemberg, \supname, \cosupname & Mail \\ \hline
+2.1 & Cantidad de documentos y hojas de datos encontradas & Quincenal & Pablo Severini & \supname, \cosupname & Video-conferencia, Mail \\ \hline
+2.2 & Cantidad de componentes disponibles & Quincenal & Pablo Severini & \supname, \cosupname & Mail \\ \hline
+3.1 & Cantidad de variantes de filtros analizadas & Quincenal & Pablo Severini & \supname, \cosupname & Video-conferencia, Mail \\ \hline
+3.2 & Cantidad de módulos diseñados & Quincenal & Pablo Severini & \supname, \cosupname & Video-conferencia, Mail \\ \hline
+3.3 & Cantidad de componentes posicionados & Quincenal & Pablo Severini & \supname, \cosupname & Video-conferencia, Mail \\ \hline
+3.4 & Cantidad de componentes montados & Quincenal & Pablo Severini & \supname, \cosupname & Mail \\ \hline
+3.5 & Cantidad de módulos funcionando & Quincenal & Pablo Severini & \supname, \cosupname & Mail \\ \hline
+3.6 & Cantidad de etapas validadas & Quincenal & Pablo Severini & \supname, \cosupname  & Video-conferencia, Mail \\ \hline
+3.7 & Cantidad de funcionalidades alcanzadas & Quincenal & Pablo Severini & \supname, \cosupname  & Mail \\ \hline
+\end{tabularx}%
+%}
+\end{table}
+\begin{table}[H]
+\centering
+\begin{tabularx}{\linewidth}{@{}|X|X|X|X|X|X|@{}}
+\hline
+\rowcolor[HTML]{C0C0C0} 
+\multicolumn{6}{|c|}{\cellcolor[HTML]{C0C0C0}SEGUIMIENTO DE AVANCE}                                                                       \\ \hline
+\rowcolor[HTML]{C0C0C0} 
+Tarea del WBS & Indicador de avance & Frecuencia de reporte & Resp. de seguimiento & Persona a ser informada & Método de comunic. \\ \hline
+4.1 & Cantidad de funcionalidades alcanzadas & Quincenal & Pablo Severini & \supname, \cosupname & Mail \\ \hline
+4.2 & Cantidad de funcionalidades alcanzadas & Quincenal & Pablo Severini & \supname, \cosupname & Mail \\ \hline
+4.3 & Cantidad de funcionalidades alcanzadas & Quincenal & Pablo Severini & \supname, \cosupname & Mail \\ \hline
+5.1 & Cantidad de funcionalidades alcanzadas & Quincenal & Pablo Severini & \supname, \cosupname & Mail \\ \hline
+5.2 & Cantidad de funcionalidades alcanzadas & Quincenal & Pablo Severini & \supname, \cosupname & Mail \\ \hline
+5.3 & Cantidad de funcionalidades alcanzadas & Quincenal & Pablo Severini & \supname, \cosupname & Mail \\ \hline
+5.4 & Cantidad de funcionalidades alcanzadas & Quincenal & Pablo Severini & \supname, \cosupname & Mail \\ \hline
+6.1 & Cantidad de módulos integradas 	& Quincenal & Pablo Severini & \supname, \cosupname & Mail \\ \hline
+6.2 & Porcentaje de pruebas realizadas 	& Quincenal & Pablo Severini & \supname, \cosupname & Mail \\ \hline
+6.3 & Cantidad de módulos integradas 	& Quincenal & Pablo Severini & \supname, \cosupname & Mail \\ \hline
+7.1 & Cantidad de unidades escritas &  & Pablo Severini & \supname, \cosupname & Mail \\ \hline
+7.2 & Cantidad de unidades escritas &  & Pablo Severini & \supname, \cosupname & Mail \\ \hline
+\end{tabularx}%
+%}
+\end{table}
+\begin{table}[H]
+\centering
+\begin{tabularx}{\linewidth}{@{}|X|X|X|X|X|X|@{}}
+\hline
+\rowcolor[HTML]{C0C0C0} 
+\multicolumn{6}{|c|}{\cellcolor[HTML]{C0C0C0}SEGUIMIENTO DE AVANCE}                                                                       \\ \hline
+\rowcolor[HTML]{C0C0C0} 
+Tarea del WBS & Indicador de avance & Frecuencia de reporte & Resp. de seguimiento & Persona a ser informada & Método de comunic. \\ \hline
+7.3 & Cantidad de unidades corregidas &  & Pablo Severini & \supname, \cosupname & Mail \\ \hline
+7.4 & Cantidad de módulos diseñados &  & Pablo Severini & \supname, \cosupname &  Mail \\ \hline
 \end{tabularx}%
 %}
 \end{table}
@@ -694,19 +872,12 @@ Tarea del WBS & Indicador de avance & Frecuencia de reporte & Resp. de seguimien
 \section{17. Procesos de cierre}    
 \label{sec:cierre}
 
-\begin{consigna}{red}
-Establecer las pautas de trabajo para realizar una reunión final de evaluación del proyecto, tal que contemple las siguientes actividades:
+Pablo Severini es el responsable de analizar el cumplimiento de los
+requerimientos establecidos. También sera el responsable de seguir y comparar los tiempos utilizados para cada actividad y los estimados en la planificación, con el fin de aplicar el plan de contingencia pertinente a cada situación.
 
-\begin{itemize}
-\item Pautas de trabajo que se seguirán para analizar si se respetó el Plan de Proyecto original:
- - Indicar quién se ocupará de hacer esto y cuál será el procedimiento a aplicar. 
-\item Identificación de las técnicas y procedimientos útiles e inútiles que se utilizaron, y los problemas que surgieron y cómo se solucionaron:
- - Indicar quién se ocupará de hacer esto y cuál será el procedimiento para dejar registro.
-\item Indicar quién organizará el acto de agradecimiento a todos los interesados, y en especial al equipo de trabajo y colaboradores:
-  - Indicar esto y quién financiará los gastos correspondientes.
-\end{itemize}
+Pablo Severini es el responsable de analizar lo procedimientos utilizados durante las tareas, identificar cuales presentaron dificultades y los resultados obtenido para cada tarea. El resultado sera registrado en las memorias del proyecto final.
 
-\end{consigna}
+Una vez finalizado el proyecto, se agradecerá formalmente a todos los colaboradores y se informará a los interesados la finalización del mismo. En la memoria del proyecto se escribirá un agradecimiento a los colaboradores.
 
 
 \end{document}

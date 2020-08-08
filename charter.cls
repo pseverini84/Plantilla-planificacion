@@ -73,6 +73,7 @@
 \usepackage{eurosym}
 \usepackage{rotating}
 \usepackage{pdflscape}
+\usepackage{longtable}
 
 %\usepackage{tikz}
 %\usetikzlibrary{arrows, arrows.meta, calc, positioning, quotes, shapes}
