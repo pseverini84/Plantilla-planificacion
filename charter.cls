@@ -74,6 +74,7 @@
 \usepackage{rotating}
 \usepackage{pdflscape}
 \usepackage{longtable}
+\usepackage{array}
 
 %\usepackage{tikz}
 %\usetikzlibrary{arrows, arrows.meta, calc, positioning, quotes, shapes}

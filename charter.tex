@@ -68,6 +68,8 @@ Revisión & \multicolumn{1}{c|}{\cellcolor[HTML]{C0C0C0}Detalles de los cambios 
 1.2      & 	Se agregan las correcciones del punto 1 al 6		& 15/07/2020 \\ \hline
 1.3      & 	Se agrega del punto 7 al 11							& 23/07/2020 \\ \hline
 1.4      & 	Se agrega del punto 12 al 17						& 08/08/2020 \\ \hline
+1.5      & 	Se agregan historias de usuario						& 08/08/2020 \\ \hline
+1.6      & 	Se agregan correcciones del punto 7 al 17			& 10/08/2020 \\ \hline
 \end{tabularx}
 \end{table}
 
@@ -379,9 +381,9 @@ Cantidad total de horas: (600 hs)
 \section{7. Diagrama de Activity On Node}
 \label{sec:AoN}
 
-\begin{figure}[htpb]
+\begin{figure}[H]
 \centering 
-\includegraphics[width=1.6\textwidth]{./Figuras/AON.png}
+\includegraphics[width=1.5\textwidth]{./Figuras/AON.png}
 \caption{Diagrama en \textit{Activity on Node}}
 \label{fig:AoN}
 \end{figure}
@@ -421,12 +423,12 @@ Cantidad total de horas: (600 hs)
 \rowcolor[HTML]{C0C0C0} 
 \multirow{-3}{*}{\cellcolor[HTML]{C0C0C0}\begin{tabular}[c]{@{}c@{}}Código WBS\end{tabular}} &
   \multirow{-3}{*}{\cellcolor[HTML]{C0C0C0}Nombre de la tarea} & PC & Placa digital & Placa analógica & Instrumentos \\ \hline
-\multicolumn{6}{|c|}{\cellcolor[HTML]{7ACFF5}1. Planificación} \\ \hline
+\multicolumn{6}{|c|}{\cellcolor[HTML]{D5E8D4}1. Planificación} \\ \hline
 1.1 & Realizar el plan de proyecto & 16 hs &  &  &    \\ \hline  
 \multicolumn{6}{|c|}{\cellcolor[HTML]{FFE599}2. Recopilación de información} \\ \hline
 2.1 & Búsqueda de información teórica de muestreo a alta velocidad & 32 hs &  &  &    \\ \hline
 2.2 & Búsqueda de componentes para la etapa de adquisición analógica & 30 hs &  &  &    \\ \hline
-\multicolumn{6}{|c|}{\cellcolor[HTML]{C3ABD0}3 Diseño de y validación del \textit{hardware}} \\ \hline
+\multicolumn{6}{|c|}{\cellcolor[HTML]{E1D5E7}3 Diseño de y validación del \textit{hardware}} \\ \hline
 3.1 & Selección y cálculo de filtros. & 10 hs &  &  &    \\ \hline
 3.2 & Diseño del esquemático para la etapa de adquisición analógica. & 20 hs &  &  &    \\ \hline
 3.3 & Diseño del \textit{PCB} para la etapa de adquisición analógica. & 12 hs &  &  &    \\ \hline
@@ -434,16 +436,16 @@ Cantidad total de horas: (600 hs)
 3.5 & Verificación y puesta en marcha del \textit{hardware}. &  &  & 20 hs & 20 hs  \\ \hline
 3.6 & Validación de la etapa analógica por medio de inyección señales. &  &  & 15 hs & 15 hs   \\ \hline
 3.7 & Codificar funciones para validar el diseño de la adquisición analógica. & 30 hs & 30 hs &  &   \\ \hline
-\multicolumn{6}{|c|}{\cellcolor[HTML]{FF3333}4 Desarrollo módulo de adquisición} \\ \hline
+\multicolumn{6}{|c|}{\cellcolor[HTML]{FFCCCC}4 Desarrollo módulo de adquisición} \\ \hline
 4.1 & Codificar funciones de comunicación con ADC. & 40 hs & 40 hs &  &    \\ \hline
 4.2 & Codificar funciones de detección de cruce por cero. & 15 hs & 15 hs &  & 5 hs   \\ \hline
 4.3 & Codificar funciones para el umbral de disparo. & 24 hs & 24 hs &  &  5 hs  \\ \hline
-\multicolumn{6}{|c|}{\cellcolor[HTML]{FFFF00}5 Desarrollo módulo auxiliares} \\ \hline
+\multicolumn{6}{|c|}{\cellcolor[HTML]{FFFF99}5 Desarrollo módulo auxiliares} \\ \hline
 5.1 & Codificar funciones de comunicación para la UART. & 30 hs & 30 hs &  &    \\ \hline
 5.2 & Codificar funciones del reloj de tiempo real. & 20 hs & 20 hs &  &    \\ \hline
 5.3 & Codificar funciones de botones de entrada y led de estado. & 4 hs & 4 hs &  &    \\ \hline
 5.4 & Codificar funciones de almacenamiento USB. & 40 hs & 40 hs &  &    \\ \hline
-\multicolumn{6}{|c|}{\cellcolor[HTML]{66CC00}6 Integración} \\ \hline
+\multicolumn{6}{|c|}{\cellcolor[HTML]{B9E0A5}6 Integración} \\ \hline
 6.1 & Integrar todos los módulos de software. & 50 hs & 30 hs & 30 hs & 10 hs   \\ \hline
 6.2 & Pruebas funcionales. & 30 hs & 30 hs & 30 hs & 30 hs   \\ \hline
 6.3 & Integrar los módulos de funciones de adquisición. & 50 hs & 50 hs & 50 hs & 50 hs  \\ \hline
@@ -472,7 +474,7 @@ Descripción &
   \multicolumn{1}{c|}{\cellcolor[HTML]{C0C0C0}Cantidad} &
   \multicolumn{1}{c|}{\cellcolor[HTML]{C0C0C0}Valor unitario} &
   \multicolumn{1}{c|}{\cellcolor[HTML]{C0C0C0}Valor total} \\ \hline
- Modulo K210 Maix Dock&
+ Módulo K210 Maix Dock&
   \multicolumn{1}{c|}{1} &
   \multicolumn{1}{c|}{25\euro} &
   \multicolumn{1}{c|}{25\euro} \\ \hline
@@ -516,7 +518,7 @@ Descripción &
    \\ \hline
 \end{tabularx}%
 \end{table}
-(*)Valores aproximados
+Valor total en pesos Argentino al cambio oficial (\$85,95) del día 9-8-2020: \$56725
 
 \section{11. Matriz de asignación de responsabilidades}
 \label{sec:responsabilidades}
@@ -542,12 +544,12 @@ Descripción &
   \authorname &
   \cosupname &
   \supname \\ \hline
-\multicolumn{5}{|c|}{\cellcolor[HTML]{7ACFF5}1. Planificación} \\ \hline
+\multicolumn{5}{|c|}{\cellcolor[HTML]{D5E8D4}1. Planificación} \\ \hline
 1.1 & Realizar el plan de proyecto & P & I & A   \\ \hline  
 \multicolumn{5}{|c|}{\cellcolor[HTML]{FFE599}2. Recopilación de información} \\ \hline
 2.1 & Búsqueda de información teórica de muestreo a alta velocidad & P & C & I   \\ \hline
 2.2 & Búsqueda de componentes para la etapa de adquisición analógica & P & C & I   \\ \hline
-\multicolumn{5}{|c|}{\cellcolor[HTML]{C3ABD0}3 Diseño de y validación del \textit{hardware}} \\ \hline
+\multicolumn{5}{|c|}{\cellcolor[HTML]{E1D5E7}3 Diseño de y validación del \textit{hardware}} \\ \hline
 3.1 & Selección y cálculo de filtros. & P & C & C   \\ \hline
 3.2 & Diseño del esquemático para la etapa de adquisición analógica. & P & I & I   \\ \hline
 3.3 & Diseño del \textit{PCB} para la etapa de adquisición analógica. & P & I & I   \\ \hline
@@ -555,16 +557,16 @@ Descripción &
 3.5 & Verificación y puesta en marcha del \textit{hardware}. & P & I & I  \\ \hline
 3.6 & Validación de la etapa analógica por medio de inyección señales. & P & I & I   \\ \hline
 3.7 & Codificar funciones para validar el diseño de la adquisición analógica. & P & - & -  \\ \hline
-\multicolumn{5}{|c|}{\cellcolor[HTML]{FF3333}4 Desarrollo módulo de adquisición} \\ \hline
+\multicolumn{5}{|c|}{\cellcolor[HTML]{FFCCCC}4 Desarrollo módulo de adquisición} \\ \hline
 4.1 & Codificar funciones de comunicación con ADC. & P & - & -   \\ \hline
 4.2 & Codificar funciones de detección de cruce por cero. & P & - & -   \\ \hline
 4.3 & Codificar funciones para el umbral de disparo. & P & - & -   \\ \hline
-\multicolumn{5}{|c|}{\cellcolor[HTML]{FFFF00}5 Desarrollo módulo auxiliares} \\ \hline
+\multicolumn{5}{|c|}{\cellcolor[HTML]{FFFF99}5 Desarrollo módulo auxiliares} \\ \hline
 5.1 & Codificar funciones de comunicación para la UART. & P & - & -   \\ \hline
 5.2 & Codificar funciones del reloj de tiempo real. & P & - & -  \\ \hline
 5.3 & Codificar funciones de botones de entrada y led de estado. & P & - & -   \\ \hline
 5.4 & Codificar funciones de almacenamiento USB. & P & - & -   \\ \hline
-\multicolumn{5}{|c|}{\cellcolor[HTML]{66CC00}6 Integración} \\ \hline
+\multicolumn{5}{|c|}{\cellcolor[HTML]{B9E0A5}6 Integración} \\ \hline
 6.1 & Integrar todos los módulos de software. & P & I & I   \\ \hline
 6.2 & Pruebas funcionales. & P & C & A  \\ \hline
 6.3 & Integrar los módulos de funciones de adquisición. & P & I & I  \\ \hline
@@ -591,30 +593,30 @@ Referencias:
 \section{12. Gestión de riesgos}
 \label{sec:riesgos}
 
-a) Identificación de los riesgos (al menos cinco) y estimación de sus consecuencias:
+a) Identificación de los riesgos y estimación de sus consecuencias:
  
-Riesgo 1: Restricciones de velocidad para realizar la adquisición. 
+Riesgo 1: restricciones de velocidad para realizar la adquisición. 
 \begin{itemize}
-\item Severidad (8): Si el microprocesador no es adecuado para realizar la adquisición a alta velocidad, se deberá buscar otro procesador y migrar el trabajo existente a la nueva plataforma generando retrasos en el cronograma, no solo por el trabajo adicional sino por el tiempo de espera en la adquisición del nuevo procesador.
-\item Probabilidad de ocurrencia (6): Puede suceder ya que el microprocesador elegido si bien opera en frecuencias de procesador de 500 MHz, no tiene apéndice de especificación de la velocidad de los periféricos. 
+\item Severidad (8): si el microprocesador no es adecuado para realizar la adquisición a alta velocidad, se deberá buscar otro procesador y migrar el trabajo existente a la nueva plataforma lo que generara retrasos en el cronograma, no solo por el trabajo adicional sino por el tiempo de espera en la adquisición del nuevo procesador.
+\item Probabilidad de ocurrencia (6): puede suceder ya que el microprocesador elegido si bien opera en frecuencias de 500 MHz, no tiene apéndice de especificación de la velocidad de los periféricos. 
 \end{itemize}   
 
-Riesgo 2: Problemas de deformación de señal en la etapa analógica.
+Riesgo 2: problemas de deformación de señal en la etapa analógica.
 \begin{itemize}
-\item Severidad (9): Si la adaptación y preparación de la señal deforman la misma, la adquisición realizada podría no tener utilidad, obligando a redisenar la etapa.  
-\item Ocurrencia (5): Puede suceder ya que el diseño de alta frecuencia depende de muchas características de diseño que deben realizarse sin error.
+\item Severidad (9): si la adaptación y preparación deforman la señal, la adquisición realizada podría no tener utilidad, obligando a rediseñar la etapa.  
+\item Ocurrencia (5): puede suceder ya que el diseño de alta frecuencia depende de muchas características de diseño que deben realizarse sin error.
 \end{itemize}
 
-Riesgo 3: Destrucción del prototipo de hardware
+Riesgo 3: destrucción del prototipo de hardware
 \begin{itemize}
-\item Severidad (8): La perdida del prototipo de hardware generaría un retraso en el cronograma de trabajo.  
-\item Ocurrencia (5): Es probable que suceda en la etapa de prueba.  
+\item Severidad (8): la pérdida del prototipo de hardware generaría un retraso en el cronograma de trabajo.  
+\item Ocurrencia (5): es probable que suceda en la etapa de prueba.  
 \end{itemize}
 
-Riesgo 4: El instrumental adquirido no cubre con los requerimientos necesitados
+Riesgo 4: el instrumental adquirido no cubre los requerimientos necesarios
 \begin{itemize}
-\item Severidad (7): Impactaría en el costo y en el tiempo de adquisición del nuevo instrumental.  
-\item Ocurrencia (2): Es poco probable que suceda ya que las características necesitadas y las ofrecidas son conocidas .  
+\item Severidad (7): impactaría en el costo y en el tiempo de adquisición del nuevo instrumental.  
+\item Ocurrencia (2): es poco probable que suceda ya que las características necesarias y las ofrecidas son conocidas .  
 \end{itemize}
 
 
@@ -634,28 +636,28 @@ Riesgo & S & O & RPN & S* & O* & RPN* \\ \hline
 \end{table}
 
 Criterio adoptado: 
-Se tomarán medidas de mitigación en los riesgos cuyos números de RPN sean mayores a 30
+se tomarán medidas de mitigación en los riesgos cuyos números de RPN sean mayores a 30
 
 Nota: los valores marcados con (*) en la tabla corresponden luego de haber aplicado la mitigación.
 
 c) Plan de mitigación de los riesgos que originalmente excedían el RPN máximo establecido:
  
-Riesgo 1: Se seleccionara y comprara un microprocesador alternativo por si el primero no cumple con los requisitos.
+Riesgo 1: se realizará un ensayo temprano con el fin de determinar si el microcontrolador cumple con los requisitos necesarios.
 \begin{itemize}  
-\item Severidad (4): La severidad desciende ya que en caso de que el primer microcontrolador no cumpla con los requisitos se dispondrá de un segundo modelo para seguir con la implementación. 
-\item Probabilidad de ocurrencia (6): La probabilidad de ocurrencia se mantiene.
+\item Severidad (4): la severidad desciende ya que en caso de que el microcontrolador no cumpla con los requisitos se dispondrá de tiempo para seleccionar un segundo modelo. 
+\item Probabilidad de ocurrencia (6): la probabilidad de ocurrencia se mantiene.
 \end{itemize}
 
-Riesgo 2: La etapa analógica se diseñara teniendo en cuenta las buenas practicas en diseños de alta frecuencia, se calcularan impedancias características de cada etapa realizando microstrip donde corresponda y se seleccionaran cuidadosamente los componentes.
+Riesgo 2: la etapa analógica se diseñará teniendo en cuenta las buenas prácticas en diseños de alta frecuencia, se calcularán impedancias características de cada etapa realizando microstrip donde corresponda y se seleccionarán cuidadosamente los componentes.
 \begin{itemize}  
-\item Severidad (9): La severidad se mantiene.
-\item Probabilidad de ocurrencia (3): La probabilidad de ocurrencia desciende ya que se aplicaran controles y esfuerzo adicional en el diseño y calculo de la etapa.
+\item Severidad (9): la severidad se mantiene.
+\item Probabilidad de ocurrencia (3): la probabilidad de ocurrencia desciende ya que se aplicarán controles y esfuerzo adicional en el diseño y cálculo de la etapa.
 \end{itemize}
    
-Riesgo 3: Se tendrá una placa de prototipo de backup.
+Riesgo 3: se tendrá una placa de prototipo de backup.
 \begin{itemize}  
-\item Severidad (8): La severidad se mantiene.
-\item Probabilidad de ocurrencia (2): La probabilidad de ocurrencia desciende ya que se dispondrá de una placa auxiliar para remplazar la principal.
+\item Severidad (8): la severidad se mantiene.
+\item Probabilidad de ocurrencia (2): la probabilidad de ocurrencia desciende ya que se dispondrá de una placa auxiliar para remplazar la principal.
 \end{itemize}
 
 
@@ -664,121 +666,121 @@ Riesgo 3: Se tendrá una placa de prototipo de backup.
 
 Para cada uno de los requerimientos del proyecto indique:
 \begin{itemize} 
-\item Req \#1: El dispositivo deberá, mediante el procesamiento de las adquisiciones, detectar los picos máximos de los pulsos de DP y representarlos sobre una senoide de referencia de frecuencia industrial - 50 Hertz - en fase con la tensión de ensayo (generar un patrón de DP).
+\item Req \#1: el dispositivo deberá, mediante el procesamiento de las adquisiciones, detectar los picos máximos de los pulsos de DP y representarlos sobre una senoide de referencia de frecuencia industrial - 50 Hertz - en fase con la tensión de ensayo (generar un patrón de DP).
 
 Verificación y validación:
 
 \begin{itemize}
-\item Verificación: Revisión de algoritmos, circuito esquemático y hojas de datos.
-\item Validación: Se inyectara en la etapa de entrada un señales simulada provistas por el cliente con el fin de validar que el patrón de DP obtenido sea el esperado.
+\item Verificación: revisión de algoritmos, circuito esquemático y hojas de datos.
+\item Validación: se inyectará en la etapa de entrada un señales simulada provistas por el cliente con el fin de validar que el patrón de DP obtenido sea el esperado.
 \end{itemize}
 
-\item Req \#2: El dispositivo deberá funcionar como un sistema \textit{"stand-alone"}.
+\item Req \#2: el dispositivo deberá funcionar como un sistema \textit{"stand-alone"}.
 
 Verificación y validación:
 
 \begin{itemize}
-\item Verificación: Sin acción asociada
-\item Validación: Se realizaran todas la pruebas solo utilizando el dispositivo.
+\item Verificación: sin acción asociada
+\item Validación: se realizarán todas la pruebas utilizando el dispositivo.
 \end{itemize}
 
-\item Req \#3: El dispositivo debe mantener la fecha y hora por medio de un RTC.
+\item Req \#3: el dispositivo debe mantener la fecha y hora por medio de un RTC.
 
 Verificación y validación:
 
 \begin{itemize}
-\item Verificación: Revisión de algoritmos, circuito esquemático y hojas de datos.
-\item Validación: Se ingresara una hora fecha y hora en el sistema, se interrumpirá el suministro eléctrico y una vez restablecido se verificara la hora del sistema.
+\item Verificación: revisión de algoritmos, circuito esquemático y hojas de datos.
+\item Validación: se ingresará una hora fecha y hora en el sistema, se interrumpirá el suministro eléctrico y una vez restablecido se verificará la hora del sistema.
 \end{itemize}
 
-\item Req \#4: El dispositivo deberá tener un puerto de acceso serial (preferentemente diferencial) para configuración y acceso a datos remoto.
+\item Req \#4: el dispositivo deberá tener un puerto de acceso serial (preferentemente diferencial) para configuración y acceso a datos remoto.
 
 Verificación y validación:
 
 \begin{itemize}
-\item Verificación: Revisión de circuito esquemático. 
-\item Validación: Se realizara una inspección visual y un caso practico de envió de comando para validar su funcionamiento.
+\item Verificación: revisión de circuito esquemático. 
+\item Validación: se realizará una inspección visual y un caso práctico de envió de comando para validar su funcionamiento.
 \end{itemize}
 
-\item Req \#5: El dispositivo deberá contar con un puerto USB para la descarga de los patrones de DP.
+\item Req \#5: el dispositivo deberá contar con un puerto USB para la descarga de los patrones de DP.
 
 Verificación y validación:
 
 \begin{itemize}
-\item Verificación: Revisión de circuito esquemático.
-\item Validación: Se realizara una inspección visual y un caso practico de descarga de datos para validar su funcionamiento.
+\item Verificación: revisión de circuito esquemático.
+\item Validación: se realizará una inspección visual y un caso práctico de descarga de datos para validar su funcionamiento.
 \end{itemize}
 
-\item Req \#6: Requerimientos asociados a la configuración.
+\item Req \#6: requerimientos asociados a la configuración.
 
 Verificación y validación:
 
 \begin{itemize}
-\item Verificación: Se realizaran paquete de prueba de configuración que incluyan tramas de configuración y valores esperados en el equipo luego de recibir la trama.
-\item Validación: Se realizara la configuración completa del equipo junto al cliente con el fin de recibir la aprobación del mismo.
+\item Verificación: se realizarán paquete de prueba de configuración que incluyan tramas de configuración y valores esperados en el equipo luego de recibir la trama.
+\item Validación: se realizará la configuración completa del equipo junto al cliente con el fin de recibir la aprobación del mismo.
 \end{itemize}
 
-\item Req \#7: Requerimientos asociados al modo de trabajo
+\item Req \#7: requerimientos asociados al modo de trabajo
 
 Verificación y validación:
 
 \begin{itemize}
-\item Verificación:
-\item Validación: 
+\item Verificación: sin acción asociada.
+\item Validación: se programará el calendario, se "armará" el dispositivo y se verificará junto al cliente que se realice la adquisición esperada. Luego se procederá al "desarme" de dispositivo.
 \end{itemize}
 
-\item Req \#8: La entrada de señal de referencia debe poder detectar los cruces por cero de una senoide de 50 Hz, y saber su polaridad.
+\item Req \#8: la entrada de señal de referencia debe poder detectar los cruces por cero de una senoide de 50 Hz, y saber su polaridad.
 
 Verificación y validación:
 
 \begin{itemize}
-\item Verificación: Se inyectaran señales de 50 Hz y se verificaran los resultados obtenidos con un osciloscopio y el mismo sistema.
-\item Validación: Sin acción asociada.
+\item Verificación: se inyectarán señales de 50 Hz y se verificarán los resultados obtenidos con un osciloscopio y el mismo sistema.
+\item Validación: sin acción asociada.
 \end{itemize}
 
-\item Req \#9: La entrada de señal de referencia debe ser opto-acoplada.
+\item Req \#9: la entrada de señal de referencia debe ser opto-acoplada.
 
 Verificación y validación:
 
 \begin{itemize}
-\item Verificación: Revisión de circuito esquemático y hojas de dato.
-\item Validación: Sin acción asociada. 
+\item Verificación: revisión de circuito esquemático y hojas de dato.
+\item Validación: sin acción asociada. 
 \end{itemize}
 
-\item Req \#10: El dispositivo deberá llevar un contador en milisegundos a partir de la señal de cruce por cero. De forma tal que se pueda saber en todo momento si está transcurriendo un semiciclo positivo o negativo y saber cuánto tiempo transcurrió desde su inicio.
+\item Req \#10: el dispositivo deberá llevar un contador en milisegundos a partir de la señal de cruce por cero. De forma tal que se pueda saber en todo momento si está transcurriendo un semiciclo positivo o negativo y saber cuánto tiempo transcurrió desde su inicio.
 
 Verificación y validación:
 
 \begin{itemize}
-\item Verificación: Se inyectaran señales de 50 Hz y se verificaran los resultados obtenidos con un osciloscopio y el mismo sistema.
-\item Validación: Sin acción asociada.
+\item Verificación: se inyectarán señales de 50 Hz y se verificarán los resultados obtenidos con un osciloscopio y el mismo sistema.
+\item Validación: sin acción asociada.
 \end{itemize}
 
-\item Req \#11: Requerimientos asociados a la adquisición de la señal analógica
+\item Req \#11: requerimientos asociados a la adquisición de la señal analógica
 
 Verificación y validación:
 
 \begin{itemize}
-\item Verificación: Se inyectaran señales simuladas en la etapa de entrada, dentro de los margenes de frecuencia y tension de trabajo. La señales obtenidas por el dispositivo serán comparadas con las medidas por un osciloscopio a la entrada y a la salida del filtro analógico. También se inyectaran señales con frecuencias por encima de la operativa con el fin de detectar si el filtro esta cortando correctamente.
-\item Validación: Se inyectaran señales simuladas provistas por el cliente y se analizaran en conjunto los resultados.
+\item Verificación: se inyectarán señales simuladas en la etapa de entrada, dentro de los margenes de frecuencia y tension de trabajo. La señales obtenidas por el dispositivo serán comparadas con las medidas por un osciloscopio a la entrada y a la salida del filtro analógico. También se inyectarán señales con frecuencias por encima de la operativa con el fin de detectar si el filtro esta cortando correctamente.
+\item Validación: se inyectarán señales simuladas provistas por el cliente y se analizarán en conjunto los resultados.
 \end{itemize}
 
-\item Req \#12: Requerimientos asociados a la interfaz de usuario.
+\item Req \#12: requerimientos asociados a la interfaz de usuario.
 
 Verificación y validación:
 
 \begin{itemize}
-\item Verificación: Revisión de circuito esquemático y funciones.
-\item Validación: Se realizara una operatoria de activación y descarga junto al cliente con el fin de recibir la aprobación del mismo.
+\item Verificación: revisión de circuito esquemático y funciones.
+\item Validación: se realizará una operatoria de activación y descarga junto al cliente con el fin de recibir la aprobación del mismo.
 \end{itemize}
 
-\item Req \#13: Requerimientos de acceso a datos
+\item Req \#13: requerimientos de acceso a datos
 
 Verificación y validación:
 
 \begin{itemize}
-\item Verificación: Revisión de funciones y diagramas.
-\item Validación: Se realizara una operatoria de acceso a datos junto al cliente con el fin de recibir la aprobación del mismo. 
+\item Verificación: revisión de funciones y diagramas.
+\item Validación: se realizará una operatoria de acceso a datos junto al cliente con el fin de recibir la aprobación del mismo. 
 \end{itemize}
 
 \end{itemize}
@@ -799,40 +801,53 @@ Verificación y validación:
 \multicolumn{6}{|c|}{\cellcolor[HTML]{C0C0C0}PLAN DE COMUNICACIÓN DEL PROYECTO}           \\ \hline
 \rowcolor[HTML]{C0C0C0} 
 ¿Qué comunicar? & Audiencia & Propósito & Frecuencia & Método de comunicac. & Responsable \\ \hline
-Avances         & Dr.Ing.Marcos Maillot, Ing. Cristian Bonini & Solucionar problemas, anticipar desvíos, prevenir atrasos.          & Quincenal  & Mail			        & Pablo Severini            \\ \hline
-Consultas       & Dr.Ing.Marcos Maillot, Ing. Cristian Bonini & Consultar dudas teóricas y de diseño  
-& Quincenal  	& Video-conferencia     & Pablo Severini            \\ \hline
-Avances con plan de trabajo         & Patricio Bos, Ariel Lutemberg  &      Semanal     &  Mail          &                      & Pablo Severini            \\ \hline
-\end{tabularx}
+Avances         & \raggedright Dr. Ing. Marcos Maillot, Ing. Cristian Bonini & Solucionar problemas, anticipar desvíos, prevenir atrasos.          & Quincenal  & Mail			        & \raggedright\arraybackslash Pablo Severini            \\ \hline
+Consultas       & \raggedright Dr. Ing. Marcos Maillot, Ing. Cristian Bonini & Consultar dudas teóricas y de diseño  
+& Quincenal  	& Video-conferencia     & \raggedright\arraybackslash Pablo Severini            \\ \hline
+Avances con plan de trabajo         & \raggedright Patricio Bos, Ariel Lutemberg  & Consultar dudas sobre realización del plan del trabajo     &  Semanal          & Mail          & \raggedright\arraybackslash Pablo Severini            \\ \hline
+ \end{tabularx}
 \end{table}
 \pagebreak
 
 \section{15. Gestión de Compras}
 \label{sec:compras}
-Compra: Componentes electrónicos
-Proveedor: Mouser
-Criterios de selección: Calidad, precio, disponibilidad de componentes y envíos Portugal.
+En esta sección se detallan los principales elementos que deben ser adquiridos para la realización de este proyecto. Asimismo, se identifican los posibles proveedores con un breve análisis de las condiciones comerciales y los motivos para su selección.
 
-Compra: Osciloscopio Siglent SDS1202X-E
-Proveedor: Welectron GmbH
-Criterios de selección: Precio, es representante oficial de Sigilent y hace envíos a Portugal.
+Componentes electrónicos
+\begin{itemize}
+\item Proveedor: Mouser
+\item Criterios de selección: calidad, precio, disponibilidad de componentes y envíos a Portugal.
+\end{itemize}
 
-Compra: DDS FY6900
-Proveedor: Amazon
-Criterios de selección: Precio, disponibilidad y envíos rápidos a Portugal.
+Osciloscopio Siglent SDS1202X-E
+\begin{itemize}
+\item Proveedor: Welectron GmbH
+\item Criterios de selección: precio, es representante oficial de Sigilent y hace envíos a Portugal.
+\end{itemize}
 
-Compra: Fuente Minleaf NPS3010W
-Proveedor: Amazon
-Criterios de selección: Precio, disponibilidad y envíos rápidos a Portugal.
+DDS FY6900
+\begin{itemize}
+\item Proveedor: Amazon
+\item Criterios de selección: precio, disponibilidad y envíos rápidos a Portugal.
+\end{itemize}
 
-Compra: Cables y adaptadores SMA
-Proveedor: Amazon
-Criterios de selección: Precio, disponibilidad y envíos rápidos a Portugal.
+Fuente Minleaf NPS3010W
+\begin{itemize}
+\item Proveedor: Amazon
+\item Criterios de selección: precio, disponibilidad y envíos rápidos a Portugal.
+\end{itemize}
 
-Compra: PCB
-Proveedor: JLCPCB
-Criterios de selección: Precio, tiempo producción y hace envíos por DHL.
+Cables y adaptadores SMA
+\begin{itemize}
+\item Proveedor: Amazon
+\item Criterios de selección: precio, disponibilidad y envíos rápidos a Portugal.
+\end{itemize}
 
+PCB
+\begin{itemize}
+\item Proveedor: JLCPCB
+\item Criterios de selección: precio, tiempo producción y hace envíos por DHL.
+\end{itemize}
 
 \section{16. Seguimiento y control}
 \label{sec:seguimiento}
@@ -845,16 +860,14 @@ Criterios de selección: Precio, tiempo producción y hace envíos por DHL.
 \multicolumn{6}{|c|}{\cellcolor[HTML]{C0C0C0}SEGUIMIENTO DE AVANCE}                                                                       \\ \hline
 \rowcolor[HTML]{C0C0C0} 
 Tarea del WBS & Indicador de avance & Frecuencia de reporte & Resp. de seguimiento & Persona a ser informada & Método de comunic. \\ \hline
-1.1 & Cantidad de puntos completados & Semanal & Pablo Severini & Patricio Bos, Ariel Lutemberg, \supname, \cosupname & Mail \\ \hline
-2.1 & Cantidad de documentos y hojas de datos encontradas & Quincenal & Pablo Severini & \supname, \cosupname & Video-conferencia, Mail \\ \hline
-2.2 & Cantidad de componentes disponibles & Quincenal & Pablo Severini & \supname, \cosupname & Mail \\ \hline
-3.1 & Cantidad de variantes de filtros analizadas & Quincenal & Pablo Severini & \supname, \cosupname & Video-conferencia, Mail \\ \hline
-3.2 & Cantidad de módulos diseñados & Quincenal & Pablo Severini & \supname, \cosupname & Video-conferencia, Mail \\ \hline
-3.3 & Cantidad de componentes posicionados & Quincenal & Pablo Severini & \supname, \cosupname & Video-conferencia, Mail \\ \hline
-3.4 & Cantidad de componentes montados & Quincenal & Pablo Severini & \supname, \cosupname & Mail \\ \hline
-3.5 & Cantidad de módulos funcionando & Quincenal & Pablo Severini & \supname, \cosupname & Mail \\ \hline
-3.6 & Cantidad de etapas validadas & Quincenal & Pablo Severini & \supname, \cosupname  & Video-conferencia, Mail \\ \hline
-3.7 & Cantidad de funcionalidades alcanzadas & Quincenal & Pablo Severini & \supname, \cosupname  & Mail \\ \hline
+1.1 & Cantidad de puntos completados & Semanal & \raggedright Pablo Severini & \raggedright\arraybackslash Patricio Bos, Ariel Lutemberg, \supname, \cosupname & Mail \\ \hline
+2.1 & Cantidad de documentos y hojas de datos encontradas & Quincenal & \raggedright Pablo Severini & \raggedright\arraybackslash \supname, \cosupname & Video-conferencia, Mail \\ \hline
+2.2 & Cantidad de componentes disponibles & Quincenal & \raggedright Pablo Severini & \raggedright\arraybackslash \supname, \cosupname & Mail \\ \hline
+3.1 & Cantidad de variantes de filtros analizadas & Quincenal & \raggedright Pablo Severini & \raggedright\arraybackslash \supname, \cosupname & Video-conferencia, Mail \\ \hline
+3.2 & Cantidad de módulos diseñados & Quincenal & \raggedright Pablo Severini & \raggedright\arraybackslash \supname, \cosupname & Video-conferencia, Mail \\ \hline
+3.3 & Cantidad de componentes posicionados & Quincenal & \raggedright Pablo Severini & \raggedright\arraybackslash \supname, \cosupname & Video-conferencia, Mail \\ \hline
+3.4 & Cantidad de componentes montados & Quincenal & \raggedright Pablo Severini & \raggedright\arraybackslash \supname, \cosupname & Mail \\ \hline
+3.5 & Cantidad de módulos funcionando & Quincenal & \raggedright Pablo Severini & \raggedright\arraybackslash \supname, \cosupname & Mail \\ \hline
 \end{tabularx}%
 %}
 \end{table}
@@ -866,18 +879,16 @@ Tarea del WBS & Indicador de avance & Frecuencia de reporte & Resp. de seguimien
 \multicolumn{6}{|c|}{\cellcolor[HTML]{C0C0C0}SEGUIMIENTO DE AVANCE}                                                                       \\ \hline
 \rowcolor[HTML]{C0C0C0} 
 Tarea del WBS & Indicador de avance & Frecuencia de reporte & Resp. de seguimiento & Persona a ser informada & Método de comunic. \\ \hline
-4.1 & Cantidad de funcionalidades alcanzadas & Quincenal & Pablo Severini & \supname, \cosupname & Mail \\ \hline
-4.2 & Cantidad de funcionalidades alcanzadas & Quincenal & Pablo Severini & \supname, \cosupname & Mail \\ \hline
-4.3 & Cantidad de funcionalidades alcanzadas & Quincenal & Pablo Severini & \supname, \cosupname & Mail \\ \hline
-5.1 & Cantidad de funcionalidades alcanzadas & Quincenal & Pablo Severini & \supname, \cosupname & Mail \\ \hline
-5.2 & Cantidad de funcionalidades alcanzadas & Quincenal & Pablo Severini & \supname, \cosupname & Mail \\ \hline
-5.3 & Cantidad de funcionalidades alcanzadas & Quincenal & Pablo Severini & \supname, \cosupname & Mail \\ \hline
-5.4 & Cantidad de funcionalidades alcanzadas & Quincenal & Pablo Severini & \supname, \cosupname & Mail \\ \hline
-6.1 & Cantidad de módulos integradas 	& Quincenal & Pablo Severini & \supname, \cosupname & Mail \\ \hline
-6.2 & Porcentaje de pruebas realizadas 	& Quincenal & Pablo Severini & \supname, \cosupname & Mail \\ \hline
-6.3 & Cantidad de módulos integradas 	& Quincenal & Pablo Severini & \supname, \cosupname & Mail \\ \hline
-7.1 & Cantidad de unidades escritas & Quincenal & Pablo Severini & \supname, \cosupname & Mail \\ \hline
-7.2 & Cantidad de unidades escritas & Quincenal & Pablo Severini & \supname, \cosupname & Mail \\ \hline
+
+3.6 & Cantidad de etapas validadas & Quincenal & \raggedright Pablo Severini & \raggedright\arraybackslash \supname, \cosupname  & Video-conferencia, Mail \\ \hline
+3.7 & Cantidad de funcionalidades alcanzadas & Quincenal & \raggedright Pablo Severini & \raggedright\arraybackslash \supname, \cosupname  & Mail \\ \hline
+4.1 & Cantidad de funcionalidades alcanzadas & Quincenal & \raggedright Pablo Severini & \raggedright\arraybackslash \supname, \cosupname & Mail \\ \hline
+4.2 & Cantidad de funcionalidades alcanzadas & Quincenal & \raggedright Pablo Severini & \raggedright\arraybackslash \supname, \cosupname & Mail \\ \hline
+4.3 & Cantidad de funcionalidades alcanzadas & Quincenal & \raggedright Pablo Severini & \raggedright\arraybackslash \supname, \cosupname & Mail \\ \hline
+5.1 & Cantidad de funcionalidades alcanzadas & Quincenal & \raggedright Pablo Severini & \raggedright\arraybackslash \supname, \cosupname & Mail \\ \hline
+5.2 & Cantidad de funcionalidades alcanzadas & Quincenal & \raggedright Pablo Severini & \raggedright\arraybackslash \supname, \cosupname & Mail \\ \hline
+5.3 & Cantidad de funcionalidades alcanzadas & Quincenal & \raggedright Pablo Severini & \raggedright\arraybackslash \supname, \cosupname & Mail \\ \hline
+5.4 & Cantidad de funcionalidades alcanzadas & Quincenal & \raggedright Pablo Severini & \raggedright\arraybackslash \supname, \cosupname & Mail \\ \hline
 \end{tabularx}%
 %}
 \end{table}
@@ -889,19 +900,26 @@ Tarea del WBS & Indicador de avance & Frecuencia de reporte & Resp. de seguimien
 \multicolumn{6}{|c|}{\cellcolor[HTML]{C0C0C0}SEGUIMIENTO DE AVANCE}                                                                       \\ \hline
 \rowcolor[HTML]{C0C0C0} 
 Tarea del WBS & Indicador de avance & Frecuencia de reporte & Resp. de seguimiento & Persona a ser informada & Método de comunic. \\ \hline
-7.3 & Cantidad de unidades corregidas &  & Pablo Severini & \supname, \cosupname & Mail \\ \hline
-7.4 & Cantidad de módulos diseñados &  & Pablo Severini & \supname, \cosupname &  Mail \\ \hline
+6.1 & Cantidad de módulos integradas 	& Quincenal & \raggedright Pablo Severini & \raggedright\arraybackslash \supname, \cosupname & Mail \\ \hline
+6.2 & Porcentaje de pruebas realizadas 	& Quincenal & \raggedright Pablo Severini & \raggedright\arraybackslash \supname, \cosupname & Mail \\ \hline
+6.3 & Cantidad de módulos integradas 	& Quincenal & \raggedright Pablo Severini & \raggedright\arraybackslash \supname, \cosupname & Mail \\ \hline
+7.1 & Cantidad de unidades escritas & Quincenal & \raggedright Pablo Severini & \raggedright\arraybackslash \supname, \cosupname & Mail \\ \hline
+7.2 & Cantidad de unidades escritas & Quincenal & \raggedright Pablo Severini & \raggedright\arraybackslash \supname, \cosupname & Mail \\ \hline
+7.3 & Cantidad de unidades corregidas & Quincenal & \raggedright Pablo Severini & \raggedright\arraybackslash \supname, \cosupname & Mail \\ \hline
+7.4 & Cantidad de módulos diseñados & Quincenal & \raggedright Pablo Severini & \raggedright\arraybackslash \supname, \cosupname &  Mail \\ \hline
 \end{tabularx}%
 %}
 \end{table}
+
+\pagebreak
 
 \section{17. Procesos de cierre}    
 \label{sec:cierre}
 
 Pablo Severini es el responsable de analizar el cumplimiento de los
-requerimientos establecidos. También sera el responsable de seguir y comparar los tiempos utilizados para cada actividad y los estimados en la planificación, con el fin de aplicar el plan de contingencia pertinente a cada situación.
+requerimientos establecidos. También será el responsable de seguir y comparar los tiempos utilizados para cada actividad y los estimados en la planificación, con el fin de aplicar el plan de contingencia pertinente a cada situación.
 
-Pablo Severini es el responsable de analizar lo procedimientos utilizados durante las tareas, identificar cuales presentaron dificultades y los resultados obtenido para cada tarea. El resultado sera registrado en las memorias del proyecto final.
+Pablo Severini es el responsable de analizar los procedimientos utilizados durante las tareas, identificar cuáles presentaron dificultades y los resultados obtenido para cada tarea. El resultado será registrado en la memoria del proyecto final.
 
 Una vez finalizado el proyecto, se agradecerá formalmente a todos los colaboradores y se informará a los interesados la finalización del mismo. En la memoria del proyecto se escribirá un agradecimiento a los colaboradores.
 
